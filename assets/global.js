@@ -969,6 +969,8 @@ class VariantSelects extends HTMLElement {
       this.renderProductInfo();
       this.updateShareUrl();
     }
+
+    document.dispatchEvent(new CustomEvent('variant:changed'));
   }
 
   updateOptions() {

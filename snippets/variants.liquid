@@ -1,0 +1,44 @@
+<variant-radios
+  id="variant-radios-{{ section.id }}"
+  class="no-js-hidden"
+  data-section="{{ section.id }}"
+  data-url="{{ product.url }}"
+  {% if update_url == false %}
+    data-update-url="false"
+  {% endif %}
+  {{ block.shopify_attributes }}
+>
+  {%- for option in product.options_with_values -%}
+    <fieldset class="js product-form__input">
+      <legend class="form__label">{{ option.name }}</legend>
+      {% render 'product-variant-options', product: product, option: option, block: block %}
+    </fieldset>
+  {%- endfor -%}
+  <script type="application/json">
+    {{ product.variants | json }}
+  </script>
+</variant-radios>
+
+<script defer>
+  document.addEventListener('variant:changed', () => {
+    const url = new URL(window.location);
+    url.searchParams.append('section_id', 'product-variants');
+    const urlString = url.toString();
+    // console.log('variant_changed', urlString);
+
+    fetchProductVariantsSection(urlString);
+  });
+
+  async function fetchProductVariantsSection(variantUrl) {
+    let response = await fetch(variantUrl);
+    if (!response) throw new Error(response.status);
+    let text = await response.text();
+    let htmlMarkup = new DOMParser()
+      .parseFromString(text, 'text/html')
+      .querySelector('#shopify-section-product-variants').innerHTML;
+    console.log(htmlMarkup);
+
+    let productVariantsBlock = document.querySelector('#variant-radios-{{ section.id }}');
+    productVariantsBlock.innerHTML = htmlMarkup;
+  }
+</script>
