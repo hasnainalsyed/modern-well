@@ -11,7 +11,7 @@
 {% endcomment %}
 {%- unless product.has_only_default_variant -%}
   {%- if block.settings.picker_type == 'button' -%}
-    {% comment %} <variant-radios
+    <variant-radios
       id="variant-radios-{{ section.id }}"
       class="no-js-hidden"
       data-section="{{ section.id }}"
@@ -30,8 +30,8 @@
       <script type="application/json">
         {{ product.variants | json }}
       </script>
-    </variant-radios> {% endcomment %}
-    {% render 'variants', product: product, block: block, product_form_id: product_form_id, update_url: true %}
+    </variant-radios>
+    {% comment %} {% render 'variants', product: product, block: block, product_form_id: product_form_id, update_url: true %} {% endcomment %}
   {%- else -%}
     <variant-selects
       id="variant-selects-{{ section.id }}"
