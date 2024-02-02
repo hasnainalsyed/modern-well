@@ -10,16 +10,7 @@
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
 
-{% liquid
-  assign highest_price = 0
-  for variant in product.variants
-    if variant.price > highest_price
-      assign highest_price = variant.price
-    endif
-  endfor
-
-  assign selected_variant_price = product.selected_variant.price
-%}
+{% assign selected_variant_price = product.selected_or_first_available_variant.price %}
 
 {%- unless product.has_only_default_variant -%}
   {%- if block.settings.picker_type == 'button' -%}
@@ -39,7 +30,6 @@
           {% render 'product-variant-options',
             product: product,
             option: option,
-            highest_price: highest_price,
             selected_variant_price: selected_variant_price,
             block: block
           %}
