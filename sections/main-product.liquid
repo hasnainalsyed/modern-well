@@ -589,6 +589,12 @@
   {%- endif -%}
 
   <script>
+    document.addEventListener('variant:changed', () => {
+      console.log('Variant is Changed...');
+    });
+  </script>
+
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
       function isIE() {
         const ua = window.navigator.userAgent;

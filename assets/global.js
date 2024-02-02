@@ -1102,7 +1102,6 @@ class VariantSelects extends HTMLElement {
         );
         const productVariantsDestination = document.getElementById(`variant-radios-${this.dataset.section}`);
 
-
         const volumePricingSource = html.getElementById(
           `Volume-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
