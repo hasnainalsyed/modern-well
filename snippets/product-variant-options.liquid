@@ -43,6 +43,10 @@
           endif
       endcase
     endfor
+
+    assign name = 'option' | append: option.position
+    assign variant_for_value = product.variants | where: name, value | first
+    assign variant_price = variant_for_value.price
   -%}
 
   {%- if block.settings.picker_type == 'button' -%}
@@ -60,8 +64,32 @@
       {% endif %}
     >
     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-      {{ value -}}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+      <div class="grid grid--1-col">
+        <div class="grid-item">
+          {{ value -}}
+        </div>
+        {% unless option.name == 'Color' %}
+          <div class="grid-item">
+            {% liquid
+              assign difference = variant_price | minus: selected_variant_price
+              if difference >= 0
+                assign prefix = '+'
+              else
+                assign prefix = '-'
+              endif
+            %}
+            {{ prefix }}
+            {{
+              selected_variant_price
+              | minus: variant_price
+              | remove: '-'
+              | remove: '+'
+              | money_without_trailing_zeros
+            }}
+          </div>
+        {% endunless %}
+      </div>
     </label>
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option

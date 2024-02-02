@@ -1097,6 +1097,11 @@ class VariantSelects extends HTMLElement {
           `Inventory-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
         const inventoryDestination = document.getElementById(`Inventory-${this.dataset.section}`);
+        const productVariantsSource = html.getElementById(
+          `variant-radios-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+        );
+        const productVariantsDestination = document.getElementById(`variant-radios-${this.dataset.section}`);
+
 
         const volumePricingSource = html.getElementById(
           `Volume-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
@@ -1120,6 +1125,10 @@ class VariantSelects extends HTMLElement {
         if (skuSource && skuDestination) {
           skuDestination.innerHTML = skuSource.innerHTML;
           skuDestination.classList.toggle('hidden', skuSource.classList.contains('hidden'));
+        }
+        if (productVariantsSource && productVariantsDestination) {
+          productVariantsDestination.innerHTML = productVariantsSource.innerHTML;
+          productVariantsDestination.classList.toggle('hidden', productVariantsSource.classList.contains('hidden'));
         }
 
         if (volumePricingSource && volumePricingDestination) {
