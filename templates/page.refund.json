@@ -11,13 +11,21 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "main_contact_refund_cGA9Xn": {
+      "type": "main-contact-refund",
+      "settings": {
+        "show_title": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "main_contact_refund_cGA9Xn"
   ]
 }
