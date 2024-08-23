@@ -69,7 +69,7 @@
   }
 
   .sm-salomon__contactTitle {
-    background: var(--color-aliceblue);
+    background: var(--color-grey-23);
     border-color: var(--color-grey-08);
   }
 
@@ -333,9 +333,7 @@
     .sm-salomon__contactLastName,
     .sm-salomon__contactPhone,
     .sm-salomon__contactEmail,
-    .sm-salomon__contactTitle,
-    .sm-salomon__totalProducts,
-    .sm-salomon__refundProducts {
+    .sm-salomon__contactTitle {
       max-width: 100%;
     }
 
@@ -381,7 +379,6 @@
     if page_url contains '?'
       assign query_string = page_url | split: '?' | last
       assign qry_parts = query_string | split: '&'
-
       for part in qry_parts
         assign key_and_value = part | split: '='
         if key_and_value.size > 1
@@ -540,6 +537,7 @@
                           checked
                         {% endif %}
                       >
+
                       <label for="{{ line_item.product.id }}">
                         <div class="sm-salomon__listOfProducts" for="{{ line_item.product.id }}">
                           <div class="sm-salomon__imageLeftCol">
@@ -547,8 +545,8 @@
                               <img
                                 src="{{ line_item.product.featured_image.src | img_url: 'medium' }}"
                                 alt="{{ line_item.title }}"
-                                width="auto"
                                 height="auto"
+                                width="auto"
                                 loading="lazy"
                               >
                             {% endif %}
