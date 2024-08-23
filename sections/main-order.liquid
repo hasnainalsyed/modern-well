@@ -47,6 +47,8 @@
             <th id="ColumnPrice" scope="col" role="columnheader">{{ 'customer.order.price' | t }}</th>
             <th id="ColumnQuantity" scope="col" role="columnheader">{{ 'customer.order.quantity' | t }}</th>
             <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.order.total' | t }}</th>
+            <th id="ColumnRefund" scope="col" role="columnheader">Refund</th>
+            `
           </tr>
         </thead>
         <tbody role="rowgroup">
@@ -223,6 +225,21 @@
                 {%- else -%}
                   {{ line_item.original_line_price | money }}
                 {%- endif -%}
+              </td>
+              <td
+                headers="Row{{ line_item.key }} ColumnRefund"
+                role="cell"
+                data-label="Refund"
+              >
+                {% capture current_date_formatted %}{{ 'now' | date: '%Y-%m-%d' }}{% endcapture %}
+                {% capture order_date_formatted %}{{ order.created_at | date: '%Y-%m-%d' }}{% endcapture %}
+                {% unless order.financial_status == 'refunded' %}
+                  <a
+                    href="/pages/refund?type=refund&order_id={{ order.id }}&refund_line_item_id={{ line_item.id }}"
+                    class="sm-salomon__buttonLink{% if current_date_formatted > order_date_formatted %} sm-salomon__buttonLink--disabled{% endif %}"
+                    >Refund</a
+                  >
+                {% endunless %}
               </td>
             </tr>
           {%- endfor -%}
