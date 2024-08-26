@@ -235,7 +235,7 @@
                 {% capture order_date_formatted %}{{ order.created_at | date: '%Y-%m-%d' }}{% endcapture %}
                 {% unless order.financial_status == 'refunded' %}
                   <a
-                    href="/pages/refund?type=refund&order_id={{ order.id }}&refund_line_item_id={{ line_item.id }}"
+                    href="/pages/refund?type=refund&order_id={{ order.id }}"
                     class="sm-salomon__buttonLink{% if current_date_formatted > order_date_formatted %} sm-salomon__buttonLink--disabled{% endif %}"
                     >Refund</a
                   >
