@@ -531,9 +531,9 @@
                     >
                       <input
                         type="checkbox"
-                        name="contact[{{ line_item.product.title | downcase | handleize }}]"
+                        name="contact[{{ line_item.product.title | downcase | handleize }}-{{ line_item.id }}]"
                         id="{{ line_item.variant.id }}"
-                        name="{{ line_item.product.id }}-{{ line_item.id }}"
+                        name="{{ line_item.product.id }}"
                         value="{{ line_item.title }}"
                         data-line-item-id="{{ line_item.id }}"
                         data-checkbox="true"
