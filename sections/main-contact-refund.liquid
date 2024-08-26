@@ -519,7 +519,7 @@
         {% if customer %}
           <div class="input-row input-row--productCode input-row--productOrder">
             <div class="sm-salomon__label">
-              <label class="sm-salomon__contactLabel">반품상품*</label>
+              <label class="sm-salomon__contactLabel">Returned Goods*</label>
             </div>
             <div class="sm-salomon__input sm-salomon__input--listOfProducts">
               {% for order in customer.orders %}
@@ -609,12 +609,12 @@
 
         <div class="input-row sm-salomon__inquiryWrap">
           <div class="sm-salomon__label">
-            <label class="sm-salomon__contactLabel">반품사유*</label>
+            <label class="sm-salomon__contactLabel">Reason For Return*</label>
           </div>
           <div class="sm-salomon__input">
             <textarea
               aria-label="메시지"
-              placeholder="반품 사유를 적어주세요."
+              placeholder="Please provide a reason for the return."
               id="message"
               class="required sm-salomon__inquiryDetails"
               required
