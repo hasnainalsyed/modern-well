@@ -132,7 +132,6 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
                     data-variant-price="{{ variant.price | money }}"
                     data-variant-compare-at-price="{{ variant.compare_at_price | money }}">
                 {% endif %}
-                {{- value -}}
               {% else %}
                 <img
                   class="product-variant-images-img {% if selectedVariantId == variant.id %}selected{% endif %}"
@@ -143,6 +142,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
                   data-variant-id="{{ variant.id }}"
                   data-variant-price="{{ variant.price | money }}"
                   data-variant-compare-at-price="{{ variant.compare_at_price | money }}">
+              {{- value -}}
               {% endif %}
             </label>
           {%- else -%}
