@@ -461,6 +461,7 @@ function updateRefundCount() {
         if (currentValue > 1) {
           inputField.value = currentValue - 1;
           updateButtonStates();
+          updateRefundCount();
         }
       });
 
@@ -473,6 +474,7 @@ function updateRefundCount() {
         if (currentValue < maxQuantity) {
           inputField.value = currentValue + 1;
           updateButtonStates();
+          updateRefundCount();
         }
       });
 
