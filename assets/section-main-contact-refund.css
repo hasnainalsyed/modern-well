@@ -12,17 +12,17 @@
   border-radius: 4px;
 }
 
-#page-content .central.sm-salomon__contact-wrapper {
+.central.sm-salomon__contact-wrapper {
   width: 100%;
   padding: 64px 20px 144px;
 }
 
-#page-content .central.sm-salomon__contact-wrapper .form {
+.central.sm-salomon__contact-wrapper .form {
   max-width: 1065px;
   padding: 0;
 }
 
-#page-content .central.sm-salomon__contact-wrapper .form .input-row {
+.central.sm-salomon__contact-wrapper .form .input-row {
   display: flex;
   gap: 24px;
   margin: 0;
@@ -88,7 +88,7 @@
   color: var(--color-white);
 }
 
-#page-content .central.sm-salomon__contact-wrapper .form .input-row.sm-salomon__inquiryWrap {
+.central.sm-salomon__contact-wrapper .form .input-row.sm-salomon__inquiryWrap {
   border: none;
   padding-bottom: 0;
   align-items: flex-start;
@@ -344,12 +344,12 @@
   }
 
   .sm-salomon__textWrapper,
-  #page-content .central.sm-salomon__contact-wrapper .form .input-row {
+  .central.sm-salomon__contact-wrapper .form .input-row {
     flex-wrap: wrap;
     gap: 8px;
   }
 
-  #page-content .central.sm-salomon__contact-wrapper {
+  .central.sm-salomon__contact-wrapper {
     padding: 40px 20px 80px;
   }
 
@@ -373,7 +373,7 @@
     max-width: 100%;
   }
 
-  #page-content .central.sm-salomon__contact-wrapper .form .input-row {
+  .central.sm-salomon__contact-wrapper .form .input-row {
     padding: 20px 0;
   }
 
