@@ -308,12 +308,16 @@
 .sm-salomon__order-quantity [data-max-quantity] {
   border: 0;
   padding: 0;
+  width: 2em;
   height: auto;
   height: 27px;
   line-height: 1;
   max-width: 50px;
   text-align: center;
   min-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sm-salomon__order-quantity-btn {
