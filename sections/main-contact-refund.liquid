@@ -368,24 +368,26 @@
 
     // Function to update refund count based on checkbox state and data-max-quantity
 // Function to update refund count based on checkbox state and associated data-max-quantity inputs
-  function updateRefundCount() {
-      let totalQuantity = 0;
-      checkboxes.forEach(function (checkbox) {
-        if (checkbox.checked) {
-          // Find the associated input field with the data-max-quantity attribute
-          let container = checkbox.parentElement; // Adjust selector as needed
-          let maxQuantityInput = container.querySelector('input[data-max-quantity]');
-          console.log(maxQuantityInput);
+function updateRefundCount() {
+  let totalQuantity = 0;
+  checkboxes.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      // Assuming the data-max-quantity input is within the same parent container as the checkbox
+      let container = checkbox.parentElement;
+      let maxQuantityInput = container.querySelector('input[data-max-quantity]');
+      console.log(maxQuantityInput);
 
-          if (maxQuantityInput) {
-            let maxQuantity = maxQuantityInput.value;
-            totalQuantity += maxQuantity;
-          }
-        }
-      });
-      // Update the refund items input with the total quantity
-      refundItemsInput.value = totalQuantity;
+      if (maxQuantityInput) {
+        // Parse the value of maxQuantity as an integer
+        let maxQuantity = parseInt(maxQuantityInput.value, 10) || 0;
+        totalQuantity += maxQuantity;
+      }
     }
+  });
+  // Update the refund items input with the total quantity
+  refundItemsInput.value = totalQuantity;
+}
+
 
 
 
