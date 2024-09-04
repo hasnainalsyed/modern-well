@@ -233,14 +233,7 @@
                             <a href="javascript:void()" class="sm-salomon__order-quantity-btn" data-quantity-minus="">
                               {% render 'icon-left' %}
                             </a>
-                            <input
-                              type="text"
-                              value="1"
-                              name="contact[{{ line_item.product.title | downcase | handleize }}-1]"
-                              id="{{ line_item.variant.id }}"
-                              data-max-quantity="{{ line_item.quantity }}"
-                              readonly
-                            >
+                            <div data-max-quantity="{{ line_item.quantity }}">0</div>
                             <a href="javascript:void()" class="sm-salomon__order-quantity-btn" data-quantity-plus="">
                               {% render 'icon-right' %}
                             </a>
