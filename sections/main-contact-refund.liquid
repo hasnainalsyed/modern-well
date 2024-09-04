@@ -356,15 +356,30 @@
     var initialRefundCount = parseInt(refundItemsInput.value, 10) || 0;
 
     // Function to update refund count based on checkbox state
-    function updateRefundCount() {
-      var checkedCount = 0;
-      checkboxes.forEach(function (checkbox) {
-        if (checkbox.checked) {
-          checkedCount++;
-        }
-      });
-      refundItemsInput.value = checkedCount;
+    // function updateRefundCount() {
+    //   var checkedCount = 0;
+    //   checkboxes.forEach(function (checkbox) {
+    //     if (checkbox.checked) {
+    //       checkedCount++;
+    //     }
+    //   });
+    //   refundItemsInput.value = checkedCount;
+    // }
+
+    // Function to update refund count based on checkbox state and data-max-quantity
+function updateRefundCount() {
+  let totalQuantity = 0;
+  checkboxes.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      // Get the max quantity from the checkbox's associated data-max-quantity
+      let maxQuantity = parseInt(checkbox.getAttribute('data-max-quantity'), 10) || 0;
+      totalQuantity += maxQuantity;
     }
+  });
+  // Update the refund items input with the total quantity
+  refundItemsInput.value = totalQuantity;
+}
+
 
     // Update the refund count on initial load
     updateRefundCount();
