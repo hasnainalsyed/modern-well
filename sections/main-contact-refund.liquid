@@ -233,7 +233,7 @@
                             <a href="javascript:void()" class="sm-salomon__order-quantity-btn" data-quantity-minus="">
                               {% render 'icon-left' %}
                             </a>
-                            <div data-max-quantity="{{ line_item.quantity }}">0</div>
+                            <div data-max-quantity="{{ line_item.quantity }}">1</div>
                             <a href="javascript:void()" class="sm-salomon__order-quantity-btn" data-quantity-plus="">
                               {% render 'icon-right' %}
                             </a>
@@ -289,7 +289,7 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
     const phoneNumberInputs = document.querySelectorAll('[data-phoneNumber], [data-orderNumber]');
     phoneNumberInputs.forEach(function (input) {
       input.addEventListener('keypress', function (e) {
@@ -332,29 +332,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // Ensure refundItemsInput.value is a valid number
     let initialRefundCount = parseInt(refundItemsInput.value, 10) || 0;
 
-    // Function to update refund count based on checkbox state
-    // function updateRefundCount() {
-    //   let checkedCount = 0;
-    //   checkboxes.forEach(function (checkbox) {
-    //     if (checkbox.checked) {
-    //       checkedCount++;
-    //     }
-    //   });
-    //   refundItemsInput.value = checkedCount;
-    // }
-
     function updateRefundCount() {
       let totalQuantity = 0;
       checkboxes.forEach(function (checkbox) {
         if (checkbox.checked) {
           // Assuming the data-max-quantity input is within the same parent container as the checkbox
           let container = checkbox.parentElement;
-          let maxQuantityInput = container.querySelector('[data-max-quantity]');
-          console.log(maxQuantityInput);
+          let maxQuantityElem = container.querySelector('[data-max-quantity]');
+          console.log(maxQuantityElem);
 
-          if (maxQuantityInput) {
+          if (maxQuantityElem) {
             // Parse the value of maxQuantity as an integer
-            let maxQuantity = parseInt(maxQuantityInput.textContent, 10) || 0;
+            let maxQuantity = parseInt(maxQuantityElem.textContent, 10) || 0;
             totalQuantity += maxQuantity;
           }
         }
