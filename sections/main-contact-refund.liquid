@@ -103,7 +103,7 @@
         </div>
         <div class="input-row">
           <div class="sm-salomon__label">
-            <label class="sm-salomon__contact-label">휴대폰번호*</label>
+            <label class="sm-salomon__contact-label">휴대폰번호</label>
           </div>
           <div class="sm-salomon__input">
             <input
@@ -113,7 +113,6 @@
               id="contact_phone"
               data-phoneNumber
               maxlength="20"
-              required
               {% if customer %}
                 value="{{ customer.phone }}"
               {% endif %}
