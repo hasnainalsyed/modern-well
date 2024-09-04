@@ -1,0 +1,383 @@
+.form .sm-salomon__inquiryDetails {
+  resize: none;
+}
+
+.overlay .inner .line-1,
+.overlay-type .line-2 p {
+  color: var(--color-white);
+}
+
+.form input,
+.form .sm-salomon__inquiryDetails {
+  border-radius: 4px;
+}
+
+#page-content .central.sm-salomon__contact-wrapper {
+  width: 100%;
+  padding: 64px 20px 144px;
+}
+
+#page-content .central.sm-salomon__contact-wrapper .form {
+  max-width: 1065px;
+  padding: 0;
+}
+
+#page-content .central.sm-salomon__contact-wrapper .form .input-row {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-grey-14);
+}
+
+.sm-salomon__label {
+  flex-basis: 11%;
+  display: flex;
+  align-items: center;
+}
+
+.sm-salomon__input {
+  flex-basis: 85%;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sm-salomon__contact-label {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-14);
+  font-style: normal;
+  font-weight: var(--font-weight-500);
+  line-height: normal;
+  color: var(--color-grey-13);
+  text-align: var(--text-left);
+  text-transform: var(--text-capitalize);
+}
+
+.sm-salomon__contact-first-name,
+.sm-salomon__contact-last-name,
+.sm-salomon__contact-phone,
+.sm-salomon__contact-email,
+.sm-salomon__contact-title,
+.sm-salomon__total-products,
+.sm-salomon__refund-products {
+  width: 100%;
+  max-width: 380px;
+  margin: 0;
+}
+
+.sm-salomon__contact-title {
+  background: var(--color-aliceblue);
+  border-color: var(--color-grey-08);
+}
+
+.sm-salomon__contact-wrapper .form .wide-action .sm-salomon__contactButton {
+  max-width: 163px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  margin: 0 auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-14);
+  font-style: normal;
+  font-weight: var(--font-weight-500);
+  line-height: 1;
+  color: var(--color-white);
+}
+
+#page-content .central.sm-salomon__contact-wrapper .form .input-row.sm-salomon__inquiryWrap {
+  border: none;
+  padding-bottom: 0;
+  align-items: flex-start;
+}
+
+.sm-salomon__contact-wrapper .feature-header:not(.feature-header__no-gap) {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-27);
+  font-weight: var(--font-weight-700);
+  line-height: normal;
+  text-transform: var(--text-uppercase);
+  color: var(--color-black);
+}
+
+.sm-salomon__contact-wrapper .feature-header:not(.feature-header__no-gap):after {
+  content: none;
+}
+
+.sm-salomon__textWrapper {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+  width: 100%;
+  max-width: 1065px;
+  margin: 0 auto;
+  border-bottom: 2px solid var(--color-black);
+}
+
+.sm-salomon__text strong {
+  font-weight: var(--font-weight-500);
+}
+
+.form input,
+.form .sm-salomon__inquiryDetails {
+  padding: 16px;
+  outline-color: var(--color-black);
+}
+
+.form input {
+  height: 50px;
+}
+
+.form .sm-salomon__inquiryDetails {
+  height: 380px;
+}
+
+.form input::placeholder,
+.form .sm-salomon__inquiryDetails::placeholder {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-400);
+  line-height: normal;
+  color: var(--color-grey-04);
+}
+
+.sm-salomon__text * {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-14);
+  font-style: normal;
+  font-weight: var(--font-weight-400);
+  color: var(--color-grey-01);
+}
+
+.sm-salomon__success-message {
+  padding-top: 50px;
+  font-weight: var(--font-weight-700);
+}
+
+.sm-salomon__list-of-products {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.sm-salomon__image-left-col {
+  background: var(--color-grey-16);
+  width: 35px;
+  max-width: 35px;
+  aspect-ratio: 1/1;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sm-salomon__image-left-col img {
+  max-width: 100%;
+}
+
+.sm-salomon__content-right-col {
+  gap: 8px;
+  display: flex;
+  flex-basis: 88%;
+  flex-direction: column;
+}
+
+.sm-salomon__order-details-title {
+  text-align: var(--text-left);
+  color: var(--color-black);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-14);
+  font-style: normal;
+  font-weight: var(--font-weight-500);
+  line-height: 1.5;
+}
+
+.sm-salomon__order-details-variant {
+  text-align: var(--text-left);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-12);
+  font-style: normal;
+  font-weight: var(--font-weight-400);
+  line-height: 1.5;
+  color: var(--color-grey-02);
+}
+
+.sm-salomon__input.sm-salomon__input--list-of-products {
+  gap: 8px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sm-salomon__input.sm-salomon__input--list-of-products input[type='checkbox'] {
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 1px solid var(--color-grey-14);
+  border-radius: 3px;
+}
+
+.sm-salomon__list-of-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-basis: auto;
+  border: 1px solid var(--color-grey-10);
+  border-radius: 4px;
+  background: var(--color-white);
+  padding: 10px 20px;
+}
+
+.sm-salomon__list-of-checkbox .sm-salomon__checkbox-col {
+  gap: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.sm-salomon__list-of-checkbox.sm-salomon__list-of-checkbox--checked {
+  border-color: var(--color-grey-13);
+}
+
+.sm-salomon__input.sm-salomon__input--list-of-products input[type='checkbox'] {
+  position: relative;
+}
+
+.sm-salomon__input.sm-salomon__input--list-of-products .sm-salomon__list-of-checkbox input[type='checkbox']:before,
+.sm-salomon__input.sm-salomon__input--list-of-products .sm-salomon__list-of-checkbox--checked input[type='checkbox']:before {
+  content: '';
+  position: absolute;
+  z-index: 9;
+  width: 18px;
+  height: 18px;
+  top: -2px;
+  right: -3px;
+  bottom: 0;
+}
+
+.sm-salomon__input.sm-salomon__input--list-of-products .sm-salomon__list-of-checkbox.sm-salomon__list-of-checkbox--checked input[type='checkbox'] {
+  border: none;
+}
+
+.sm-salomon__input.sm-salomon__input--list-of-products .sm-salomon__list-of-checkbox.sm-salomon__list-of-checkbox--checked input[type='checkbox']:before {
+  display: block;
+}
+
+.form .sm-salomon__inquiryDetails {
+  height: 110px;
+}
+
+.form input,
+.form .sm-salomon__inquiryDetails {
+  color: var(--color-grey-13);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-14);
+  font-style: normal;
+  font-weight: var(--font-weight-400);
+  line-height: normal;
+}
+
+.form input::placeholder,
+.form .sm-salomon__inquiryDetails::placeholder {
+  color: var(--color-grey-04);
+}
+
+.form .sm-salomon__contact-title {
+  color: var(--color-grey-02);
+}
+
+.sm-salomon__order-quantity {
+  display: flex;
+  border-radius: 3px;
+  align-items: center;
+  max-width: fit-content;
+  justify-content: flex-start;
+  max-width: -moz-fit-content;
+  border: 1px solid var(--color-grey-14);
+}
+
+.sm-salomon__order-quantity [data-max-quantity] {
+  border: 0;
+  padding: 0;
+  height: auto;
+  height: 27px;
+  line-height: 1;
+  max-width: 50px;
+  text-align: center;
+  min-height: auto;
+}
+
+.sm-salomon__order-quantity-btn {
+  border: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  background: none;
+  padding: 10px 8px;
+}
+
+.sm-salomon__order-quantity-btn svg {
+  width: 10px;
+  height: 10px;
+}
+
+.sm-salomon__order-quantity-btn.sm-salomon__order-quantity-btn--disabled {
+  opacity: 0.5;
+  background: none;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .as-contact_content {
+    padding-bottom: 20px;
+  }
+
+  .sm-salomon__list-of-checkbox {
+    flex-basis: 100%;
+  }
+
+  .sm-salomon__textWrapper,
+  #page-content .central.sm-salomon__contact-wrapper .form .input-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #page-content .central.sm-salomon__contact-wrapper {
+    padding: 40px 20px 80px;
+  }
+
+  .form .sm-salomon__inquiryDetails {
+    height: 335px;
+  }
+
+  .sm-salomon__label,
+  .sm-salomon__input {
+    flex-basis: 100%;
+  }
+
+  .sm-salomon__contact-wrapper .form .wide-action .sm-salomon__contactButton,
+  .sm-salomon__contact-first-name,
+  .sm-salomon__contact-last-name,
+  .sm-salomon__contact-phone,
+  .sm-salomon__contact-email,
+  .sm-salomon__contact-title,
+  .sm-salomon__total-products,
+  .sm-salomon__refund-products {
+    max-width: 100%;
+  }
+
+  #page-content .central.sm-salomon__contact-wrapper .form .input-row {
+    padding: 20px 0;
+  }
+
+  .sm-salomon__contact-wrapper .feature-header:not(.feature-header__no-gap) {
+    margin-bottom: 8px;
+  }
+}
