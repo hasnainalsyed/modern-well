@@ -1,357 +1,21 @@
-<style>
-  .form .sm-salomon__inquiryDetails {
-    resize: none;
-  }
-
-  .overlay .inner .line-1,
-  .overlay-type .line-2 p {
-    color: var(--color-white);
-  }
-
-  .form input,
-  .form .sm-salomon__inquiryDetails {
-    border-radius: 4px;
-  }
-
-  #page-content .central.sm-salomon__contactWrapper {
-    width: 100%;
-    padding: 64px 20px 144px;
-  }
-
-  #page-content .central.sm-salomon__contactWrapper .form {
-    max-width: 1065px;
-    padding: 0;
-  }
-
-  #page-content .central.sm-salomon__contactWrapper .form .input-row {
-    display: flex;
-    gap: 24px;
-    margin: 0;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--color-grey-14);
-  }
-
-  .sm-salomon__label {
-    flex-basis: 11%;
-    display: flex;
-    align-items: center;
-  }
-
-  .sm-salomon__input {
-    flex-basis: 85%;
-    margin: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  .sm-salomon__contactLabel {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-14);
-    font-style: normal;
-    font-weight: var(--font-weight-500);
-    line-height: normal;
-    color: var(--color-grey-13);
-    text-align: var(--text-left);
-    text-transform: var(--text-capitalize);
-  }
-
-  .sm-salomon__contactFirstName,
-  .sm-salomon__contactLastName,
-  .sm-salomon__contactPhone,
-  .sm-salomon__contactEmail,
-  .sm-salomon__contactTitle,
-  .sm-salomon__totalProducts,
-  .sm-salomon__refundProducts {
-    width: 100%;
-    max-width: 380px;
-    margin: 0;
-  }
-
-  .sm-salomon__contactTitle {
-    background: var(--color-grey-23);
-    border-color: var(--color-grey-08);
-  }
-
-  .sm-salomon__contactWrapper .form .wide-action .sm-salomon__contactButton {
-    max-width: 163px;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 48px;
-    margin: 0 auto;
-    font-family: var(--font-primary);
-    font-size: var(--font-size-14);
-    font-style: normal;
-    font-weight: var(--font-weight-500);
-    line-height: 1;
-    color: var(--color-white);
-  }
-
-  #page-content .central.sm-salomon__contactWrapper .form .input-row.sm-salomon__inquiryWrap {
-    border: none;
-    padding-bottom: 0;
-    align-items: flex-start;
-  }
-
-  .sm-salomon__contactWrapper .feature-header:not(.feature-header__no-gap) {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-27);
-    font-weight: var(--font-weight-700);
-    line-height: normal;
-    text-transform: var(--text-uppercase);
-    color: var(--color-black);
-  }
-
-  .sm-salomon__contactWrapper .feature-header:not(.feature-header__no-gap):after {
-    content: none;
-  }
-
-  .sm-salomon__textWrapper {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 40px;
-    width: 100%;
-    max-width: 1065px;
-    margin: 0 auto;
-    border-bottom: 2px solid var(--color-black);
-  }
-
-  .sm-salomon__text strong {
-    font-weight: var(--font-weight-500);
-  }
-
-  .form input,
-  .form .sm-salomon__inquiryDetails {
-    padding: 16px;
-    outline-color: var(--color-black);
-  }
-
-  .form input {
-    height: 50px;
-  }
-
-  .form .sm-salomon__inquiryDetails {
-    height: 380px;
-  }
-
-  .form input::placeholder,
-  .form .sm-salomon__inquiryDetails::placeholder {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-14);
-    font-weight: var(--font-weight-400);
-    line-height: normal;
-    color: var(--color-grey-04);
-  }
-
-  .sm-salomon__text * {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-14);
-    font-style: normal;
-    font-weight: var(--font-weight-400);
-    color: var(--color-grey-01);
-  }
-
-  .sm-salomon__successMessage {
-    padding-top: 50px;
-    font-weight: var(--font-weight-700);
-  }
-
-  .sm-salomon__listOfProducts {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .sm-salomon__imageLeftCol {
-    background: var(--color-grey-16);
-    width: 35px;
-    max-width: 35px;
-    aspect-ratio: 1/1;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .sm-salomon__imageLeftCol img {
-     max-width: 100%; 
-  }
-
-  .sm-salomon__listOfProducts .sm-salomon__contentRightCol {
-    flex-basis: 88%;
-  }
-
-  .sm-salomon__orderDetailsTitle {
-    text-align: var(--text-left);
-    color: var(--color-black);
-    font-family: var(--font-primary);
-    font-size: var(--font-size-14);
-    font-style: normal;
-    font-weight: var(--font-weight-400);
-    line-height: normal;
-  }
-
-  .sm-salomon__orderDetailsVariant {
-    text-align: var(--text-left);
-    font-family: var(--font-primary);
-    font-size: var(--font-size-12);
-    font-style: normal;
-    font-weight: var(--font-weight-400);
-    line-height: normal;
-    color: var(--color-grey-02);
-  }
-
-  .sm-salomon__input.sm-salomon__input--listOfProducts {
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .sm-salomon__input.sm-salomon__input--listOfProducts input[type='checkbox'] {
-    width: 14px;
-    height: 14px;
-    padding: 0;
-    border: 1px solid var(--color-grey-14);
-    border-radius: 3px;
-  }
-
-  .sm-salomon__listOfCheckbox {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-basis: auto;
-    border: 1px solid var(--color-grey-10);
-    border-radius: 4px;
-    background: var(--color-white);
-    padding: 10px 20px;
-  }
-
-  .sm-salomon__listOfCheckbox label {
-    width: 100%;
-  }
-
-  .sm-salomon__listOfCheckbox.sm-salomon__listOfCheckbox--checked {
-    border-color: var(--color-grey-13);
-  }
-
-  .sm-salomon__input.sm-salomon__input--listOfProducts input[type='checkbox'] {
-    position: relative;
-  }
-
-  .sm-salomon__input.sm-salomon__input--listOfProducts .sm-salomon__listOfCheckbox input[type='checkbox']:before,
-  .sm-salomon__input.sm-salomon__input--listOfProducts
-    .sm-salomon__listOfCheckbox--checked
-    input[type='checkbox']:before {
-    content: '';
-    position: absolute;
-    z-index: 9;
-    width: 18px;
-    height: 18px;
-    top: -2px;
-    right: -3px;
-    bottom: 0;
-  }
-
-  .sm-salomon__input.sm-salomon__input--listOfProducts .sm-salomon__listOfCheckbox input[type='checkbox']:before {
+{% style %}
+  .sm-salomon__input.sm-salomon__input--list-of-products .sm-salomon__list-of-checkbox input[type='checkbox']:before {
     background: url({{'Frame_1000005015_1.svg'|file_url}}) no-repeat;
     background-size: contain;
   }
 
-  .sm-salomon__input.sm-salomon__input--listOfProducts
-    .sm-salomon__listOfCheckbox--checked
+  .sm-salomon__input.sm-salomon__input--list-of-products
+    .sm-salomon__list-of-checkbox--checked
     input[type='checkbox']:before {
     background: url({{'Frame_1000005015.svg'|file_url}}) no-repeat;
     background-size: contain;
     display: none;
   }
+{% endstyle %}
 
-  .sm-salomon__input.sm-salomon__input--listOfProducts
-    .sm-salomon__listOfCheckbox.sm-salomon__listOfCheckbox--checked
-    input[type='checkbox'] {
-    border: none;
-  }
+{{ 'section-main-contact-refund.css' | asset_url | stylesheet_tag: preload: true }}
 
-  .sm-salomon__input.sm-salomon__input--listOfProducts
-    .sm-salomon__listOfCheckbox.sm-salomon__listOfCheckbox--checked
-    input[type='checkbox']:before {
-    display: block;
-  }
-
-  .form .sm-salomon__inquiryDetails {
-    height: 110px;
-  }
-
-  .form input,
-  .form .sm-salomon__inquiryDetails {
-    color: var(--color-grey-13);
-    font-family: var(--font-primary);
-    font-size: var(--font-size-14);
-    font-style: normal;
-    font-weight: var(--font-weight-400);
-    line-height: normal;
-  }
-
-  .form input::placeholder,
-  .form .sm-salomon__inquiryDetails::placeholder {
-    color: var(--color-grey-04);
-  }
-
-  .form .sm-salomon__contactTitle {
-    color: var(--color-grey-02);
-  }
-
-  @media (max-width: 768px) {
-    .as-contact_content {
-      padding-bottom: 20px;
-    }
-
-    .sm-salomon__listOfCheckbox {
-      flex-basis: 100%;
-    }
-
-    .sm-salomon__textWrapper,
-    #page-content .central.sm-salomon__contactWrapper .form .input-row {
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    #page-content .central.sm-salomon__contactWrapper {
-      padding: 40px 20px 80px;
-    }
-
-    .form .sm-salomon__inquiryDetails {
-      height: 335px;
-    }
-
-    .sm-salomon__label,
-    .sm-salomon__input {
-      flex-basis: 100%;
-    }
-
-    .sm-salomon__contactWrapper .form .wide-action .sm-salomon__contactButton,
-    .sm-salomon__contactFirstName,
-    .sm-salomon__contactLastName,
-    .sm-salomon__contactPhone,
-    .sm-salomon__contactEmail,
-    .sm-salomon__contactTitle {
-      max-width: 100%;
-    }
-
-    #page-content .central.sm-salomon__contactWrapper .form .input-row {
-      padding: 20px 0;
-    }
-
-    .sm-salomon__contactWrapper .feature-header:not(.feature-header__no-gap) {
-      margin-bottom: 8px;
-    }
-  }
-</style>
-
-<div class="central py-medium sm-salomon__contactWrapper page-width" data-cc-animate data-cc-animate-delay="0.2s">
+<div class="central py-medium sm-salomon__contact-wrapper" data-cc-animate data-cc-animate-delay="0.2s">
   {% if section.settings.show_title %}
     <h1 class="feature-header">{{ page.title }}</h1>
   {% endif %}
@@ -383,6 +47,7 @@
     if page_url contains '?'
       assign query_string = page_url | split: '?' | last
       assign qry_parts = query_string | split: '&'
+
       for part in qry_parts
         assign key_and_value = part | split: '='
         if key_and_value.size > 1
@@ -400,7 +65,7 @@
 
   {% form 'contact' %}
     {% if form.posted_successfully? %}
-      <div class="rte align-center sm-salomon__successMessage">
+      <div class="rte align-center sm-salomon__success-message">
         {{ 'contact.form.post_success' | t }}
       </div>
 
@@ -419,14 +84,14 @@
       <div class="form">
         <div class="input-row">
           <div class="sm-salomon__label">
-            <label class="sm-salomon__contactLabel">Name*</label>
+            <label class="sm-salomon__contact-label">이름*</label>
           </div>
           <div class="sm-salomon__input">
             <input
-              aria-label="Name"
-              placeholder="Name"
+              aria-label="이름"
+              placeholder="이름"
               type="text"
-              class="required sm-salomon__contactLastName"
+              class="required sm-salomon__contact-last-name"
               id="contact_name"
               {% if customer %}
                 value="{{ customer.name }}"
@@ -438,12 +103,12 @@
         </div>
         <div class="input-row">
           <div class="sm-salomon__label">
-            <label class="sm-salomon__contactLabel">Phone*</label>
+            <label class="sm-salomon__contact-label">휴대폰번호*</label>
           </div>
           <div class="sm-salomon__input">
             <input
               aria-label="phone"
-              placeholder="Phone"
+              placeholder="휴대폰번호"
               type="tel"
               id="contact_phone"
               data-phoneNumber
@@ -452,14 +117,14 @@
               {% if customer %}
                 value="{{ customer.phone }}"
               {% endif %}
-              class="email required sm-salomon__contactPhone"
+              class="email required sm-salomon__contact-phone"
               name="contact[phone]"
             >
           </div>
         </div>
         <div class="input-row">
           <div class="sm-salomon__label">
-            <label class="sm-salomon__contactLabel">E-mail*</label>
+            <label class="sm-salomon__contact-label">E-mail*</label>
           </div>
           <div class="sm-salomon__input">
             <input
@@ -471,22 +136,22 @@
               {% if customer %}
                 value="{{ customer.email }}"
               {% endif %}
-              class="email required sm-salomon__contactEmail"
+              class="email required sm-salomon__contact-email"
               name="contact[email]"
             >
           </div>
         </div>
         <div class="input-row input-row--productCode">
           <div class="sm-salomon__label">
-            <label class="sm-salomon__contactLabel">Title*</label>
+            <label class="sm-salomon__contact-label">제목*</label>
           </div>
           <div class="sm-salomon__input">
             <input
               aria-label="Title"
-              placeholder="Please include the title of your inquiry."
+              placeholder="문의하실 내용의 제목을 적어주세요."
               type="text"
               id="contact_title"
-              class="required email sm-salomon__contactTitle"
+              class="required email sm-salomon__contact-title"
               name="contact[Order Code]"
               {% if customer %}
                 value="{% for order in customer.orders %}{% assign current_order_id = order.id | plus: 0 %}{% if current_order_id == order_id %}{{ order.name }} 주문 반품신청{% endif %}{% endfor %}"
@@ -519,19 +184,20 @@
         {% if customer %}
           <div class="input-row input-row--productCode input-row--productOrder">
             <div class="sm-salomon__label">
-              <label class="sm-salomon__contactLabel">Returned Goods*</label>
+              <label class="sm-salomon__contact-label">반품상품*</label>
             </div>
-            <div class="sm-salomon__input sm-salomon__input--listOfProducts">
+            <div class="sm-salomon__input sm-salomon__input--list-of-products">
               {% for order in customer.orders %}
                 {% assign current_order_id = order.id | plus: 0 %}
                 {% if current_order_id == order_id %}
                   {% for line_item in order.line_items %}
-                    <div class="sm-salomon__listOfCheckbox{% if refund_line_item_id contains line_item.id %} sm-salomon__listOfCheckbox--checked{% endif %}"
+                    <div
+                      class="sm-salomon__list-of-checkbox{% if refund_line_item_id contains line_item.id %} sm-salomon__list-of-checkbox--checked{% endif %}"
                       data-list-of-checkboxes
                     >
                       <input
                         type="checkbox"
-                        name="contact[{{ line_item.product.title | downcase | handleize }}-{{ line_item.id }}]"
+                        name="contact[{{ line_item.product.title | downcase | handleize }}-{{ line_item.variant.id }}]"
                         id="{{ line_item.variant.id }}"
                         name="{{ line_item.product.id }}"
                         value="{{ line_item.title }}"
@@ -541,30 +207,47 @@
                           checked
                         {% endif %}
                       >
-
-                      <label for="{{ line_item.product.id }}">
-                        <div class="sm-salomon__listOfProducts" for="{{ line_item.product.id }}">
-                          <div class="sm-salomon__imageLeftCol">
-                            {% if line_item.product.featured_image %}
-                              <img
-                                src="{{ line_item.product.featured_image.src | img_url: 'medium' }}"
-                                alt="{{ line_item.title }}"
-                                height="auto"
-                                width="auto"
-                                loading="lazy"
-                              >
-                            {% endif %}
-                          </div>
-                          <div class="sm-salomon__contentRightCol">
-                            <h2 class="sm-salomon__orderDetailsTitle">
-                              {{ line_item.product.title }}
-                            </h2>
-                            <h5 class="sm-salomon__orderDetailsVariant">
-                              {{ line_item.variant.title }}
-                            </h5>
+                      <div class="sm-salomon__checkbox-col">
+                        <div class="sm-salomon__image-left-col">
+                          {% if line_item.product.featured_image %}
+                            <img
+                              src="{{ line_item.product.featured_image.src | img_url: 'medium' }}"
+                              alt="{{ line_item.title }}"
+                              width="auto"
+                              height="auto"
+                              loading="lazy"
+                            >
+                          {% endif %}
+                        </div>
+                        <div class="sm-salomon__content-right-col">
+                          <label for="{{ line_item.variant.id }}">
+                            <div class="sm-salomon__list-of-products" for="{{ line_item.product.id }}">
+                              <h2 class="sm-salomon__order-details-title">
+                                {{ line_item.product.title }}
+                              </h2>
+                              <h5 class="sm-salomon__order-details-variant">
+                                {{ line_item.variant.title }}
+                              </h5>
+                            </div>
+                          </label>
+                          <div class="sm-salomon__order-quantity" data-order-quantity-container="">
+                            <a href="javascript:void()" class="sm-salomon__order-quantity-btn" data-quantity-minus="">
+                              {% render 'icon-left' %}
+                            </a>
+                            <input
+                              type="text"
+                              value="1"
+                              name="contact[{{ line_item.product.title | downcase | handleize }}-1]"
+                              id="{{ line_item.variant.id }}"
+                              data-max-quantity="{{ line_item.quantity }}"
+                              readonly
+                            >
+                            <a href="javascript:void()" class="sm-salomon__order-quantity-btn" data-quantity-plus="">
+                              {% render 'icon-right' %}
+                            </a>
                           </div>
                         </div>
-                      </label>
+                      </div>
                     </div>
                   {% endfor %}
                 {% endif %}
@@ -575,14 +258,14 @@
 
         <div class="input-row input-row--productCount">
           <div class="sm-salomon__label">
-            <label class="sm-salomon__contactLabel">Total*</label>
+            <label class="sm-salomon__contact-label">Total*</label>
           </div>
           <div class="sm-salomon__input">
             <input
               aria-label="Total Products/Variants"
               type="text"
               id="total_items_count"
-              class="required sm-salomon__totalProducts"
+              class="required sm-salomon__total-products"
               name="contact[Total Items Count]"
               value="{{ total_items_count }}"
               readonly
@@ -591,14 +274,14 @@
         </div>
         <div class="input-row input-row--refundCount">
           <div class="sm-salomon__label">
-            <label class="sm-salomon__contactLabel">Refunding*</label>
+            <label class="sm-salomon__contact-label">Refunding*</label>
           </div>
           <div class="sm-salomon__input">
             <input
               aria-label="Refunding"
               type="text"
               id="refund_items_count"
-              class="required sm-salomon__refundProducts"
+              class="required sm-salomon__refund-products"
               name="contact[Refund Items Count]"
               value="{{ refund_items_count }}"
               data-refund-items-count
@@ -609,12 +292,12 @@
 
         <div class="input-row sm-salomon__inquiryWrap">
           <div class="sm-salomon__label">
-            <label class="sm-salomon__contactLabel">Reason For Return*</label>
+            <label class="sm-salomon__contact-label">반품사유*</label>
           </div>
           <div class="sm-salomon__input">
             <textarea
               aria-label="메시지"
-              placeholder="Please provide a reason for the return."
+              placeholder="반품 사유를 적어주세요."
               id="message"
               class="required sm-salomon__inquiryDetails"
               required
@@ -698,22 +381,80 @@
       }
 
       // Add or remove class based on checkbox state
-      var parentDiv = checkbox.closest('.sm-salomon__listOfCheckbox');
+      var parentDiv = checkbox.closest('.sm-salomon__list-of-checkbox');
       if (checkbox.checked) {
-        parentDiv.classList.add('sm-salomon__listOfCheckbox--checked');
+        parentDiv.classList.add('sm-salomon__list-of-checkbox--checked');
       } else {
-        parentDiv.classList.remove('sm-salomon__listOfCheckbox--checked');
+        parentDiv.classList.remove('sm-salomon__list-of-checkbox--checked');
       }
 
       // Update refund count on change
       checkbox.addEventListener('change', function () {
         if (this.checked) {
-          parentDiv.classList.add('sm-salomon__listOfCheckbox--checked');
+          parentDiv.classList.add('sm-salomon__list-of-checkbox--checked');
         } else {
-          parentDiv.classList.remove('sm-salomon__listOfCheckbox--checked');
+          parentDiv.classList.remove('sm-salomon__list-of-checkbox--checked');
         }
         updateRefundCount();
       });
+    });
+
+    // Select all quantity containers
+    const quantityContainers = document.querySelectorAll('[data-order-quantity-container]');
+
+    quantityContainers.forEach((container) => {
+      // Select the elements
+      const minusBtn = container.querySelector('[data-quantity-minus]');
+      const plusBtn = container.querySelector('[data-quantity-plus]');
+      const inputField = container.querySelector('input[type="text"]');
+
+      // Function to update the button states
+      function updateButtonStates() {
+        let currentValue = parseInt(inputField.value);
+        let maxQuantity = parseInt(inputField.getAttribute('data-max-quantity'));
+
+        // Disable/enable the minus button
+        if (currentValue <= 1) {
+          minusBtn.classList.add('sm-salomon__order-quantity-btn--disabled');
+        } else {
+          minusBtn.classList.remove('sm-salomon__order-quantity-btn--disabled');
+        }
+
+        // Disable/enable the plus button
+        if (currentValue >= maxQuantity) {
+          plusBtn.classList.add('sm-salomon__order-quantity-btn--disabled');
+        } else {
+          plusBtn.classList.remove('sm-salomon__order-quantity-btn--disabled');
+        }
+      }
+
+      // Initial button state update
+      updateButtonStates();
+
+      // Handle the "-" button click
+      minusBtn.addEventListener('click', function (e) {
+        e.preventDefault()
+        let currentValue = parseInt(inputField.value);
+        if (currentValue > 1) {
+          inputField.value = currentValue - 1;
+          updateButtonStates();
+        }
+      });
+
+      // Handle the "+" button click
+      plusBtn.addEventListener('click', function (e) {
+        e.preventDefault()
+        let currentValue = parseInt(inputField.value);
+        let maxQuantity = parseInt(inputField.getAttribute('data-max-quantity'));
+
+        if (currentValue < maxQuantity) {
+          inputField.value = currentValue + 1;
+          updateButtonStates();
+        }
+      });
+
+      // Also update button states when the value is changed manually
+      inputField.addEventListener('input', updateButtonStates);
     });
   });
 </script>
