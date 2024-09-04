@@ -325,118 +325,82 @@
       }
     });
 
-    let refund_line_item_id = '{{ refund_line_item_id }}';
-    let checkboxes = document.querySelectorAll('[data-list-of-checkboxes] [data-checkbox]');
-    let refundItemsInput = document.querySelector('[data-refund-items-count]');
+    const refundLineItemId = '{{ refund_line_item_id }}';
+    const checkboxes = document.querySelectorAll('[data-list-of-checkboxes] [data-checkbox]');
+    const refundItemsInput = document.querySelector('[data-refund-items-count]');
 
-    // Ensure refundItemsInput.value is a valid number
     let initialRefundCount = parseInt(refundItemsInput.value, 10) || 0;
 
     function updateRefundCount() {
       let totalQuantity = 0;
-      checkboxes.forEach(function (checkbox) {
+      checkboxes.forEach((checkbox) => {
         if (checkbox.checked) {
-          // Assuming the data-max-quantity input is within the same parent container as the checkbox
-          let container = checkbox.parentElement;
-          let maxQuantityElem = container.querySelector('[data-max-quantity]');
-          console.log(maxQuantityElem);
-
-          if (maxQuantityElem) {
-            // Parse the value of maxQuantity as an integer
-            let maxQuantity = parseInt(maxQuantityElem.textContent, 10) || 0;
-            totalQuantity += maxQuantity;
-          }
+          const container = checkbox.parentElement;
+          const maxQuantityElem = container.querySelector('[data-max-quantity]');
+          const maxQuantity = parseInt(maxQuantityElem?.textContent, 10) || 0;
+          totalQuantity += maxQuantity;
         }
       });
-      // Update the refund items input with the total quantity
       refundItemsInput.value = totalQuantity;
     }
 
-    // Update the refund count on initial load
-    updateRefundCount();
-
-    // Add event listeners to update count and style when checkboxes change
-    checkboxes.forEach(function (checkbox) {
-      let lineItemID = checkbox.getAttribute('data-line-item-id');
-
-      // Automatically check the checkbox with the matching refund_line_item_id
-      if (lineItemID === refund_line_item_id) {
-        checkbox.checked = true;
-      }
-
-      // Add or remove class based on checkbox state
-      let parentDiv = checkbox.closest('.sm-salomon__list-of-checkbox');
-      if (checkbox.checked) {
-        parentDiv.classList.add('sm-salomon__list-of-checkbox--checked');
-      } else {
-        parentDiv.classList.remove('sm-salomon__list-of-checkbox--checked');
-      }
-
-      // Update refund count on change
-      checkbox.addEventListener('change', function () {
-        if (this.checked) {
-          parentDiv.classList.add('sm-salomon__list-of-checkbox--checked');
-        } else {
-          parentDiv.classList.remove('sm-salomon__list-of-checkbox--checked');
-        }
-        updateRefundCount();
-      });
-    });
-
-    // Select all quantity containers
-    const quantityContainers = document.querySelectorAll('[data-order-quantity-container]');
-
-    quantityContainers.forEach((container) => {
-      // Select the elements
+    function updateButtonStates(container) {
       const minusBtn = container.querySelector('[data-quantity-minus]');
       const plusBtn = container.querySelector('[data-quantity-plus]');
       const maxQuantityDiv = container.querySelector('[data-max-quantity]');
+      const currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
+      const maxQuantity = parseInt(maxQuantityDiv.getAttribute('data-max-quantity'), 10) || 0;
 
-      // Convert the div's initial text content to a number
-      let currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
-      let maxQuantity = parseInt(maxQuantityDiv.getAttribute('data-max-quantity'), 10) || 0;
+      minusBtn.classList.toggle('sm-salomon__order-quantity-btn--disabled', currentValue <= 1);
+      plusBtn.classList.toggle('sm-salomon__order-quantity-btn--disabled', currentValue >= maxQuantity);
+    }
 
-      // Function to update the button states
-      function updateButtonStates() {
-        // Disable/enable the minus button
-        if (currentValue <= 1) {
-          minusBtn.classList.add('sm-salomon__order-quantity-btn--disabled');
-        } else {
-          minusBtn.classList.remove('sm-salomon__order-quantity-btn--disabled');
-        }
+    function handleCheckboxChange(checkbox) {
+      const parentDiv = checkbox.closest('.sm-salomon__list-of-checkbox');
+      parentDiv.classList.toggle('sm-salomon__list-of-checkbox--checked', checkbox.checked);
+      updateRefundCount();
+    }
 
-        // Disable/enable the plus button
-        if (currentValue >= maxQuantity) {
-          plusBtn.classList.add('sm-salomon__order-quantity-btn--disabled');
-        } else {
-          plusBtn.classList.remove('sm-salomon__order-quantity-btn--disabled');
-        }
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.getAttribute('data-line-item-id') === refundLineItemId) {
+        checkbox.checked = true;
       }
+      checkbox.addEventListener('change', () => handleCheckboxChange(checkbox));
+      handleCheckboxChange(checkbox); // Initial state update
+    });
 
-      // Initial button state update
-      updateButtonStates();
+    document.querySelectorAll('[data-order-quantity-container]').forEach((container) => {
+      const minusBtn = container.querySelector('[data-quantity-minus]');
+      const plusBtn = container.querySelector('[data-quantity-plus]');
 
-      // Handle the "-" button click
-      minusBtn.addEventListener('click', function (e) {
+      minusBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        const maxQuantityDiv = container.querySelector('[data-max-quantity]');
+        let currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
+
         if (currentValue > 1) {
           currentValue -= 1;
           maxQuantityDiv.textContent = currentValue;
-          updateButtonStates();
+          updateButtonStates(container);
           updateRefundCount();
         }
       });
 
-      // Handle the "+" button click
-      plusBtn.addEventListener('click', function (e) {
+      plusBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        const maxQuantityDiv = container.querySelector('[data-max-quantity]');
+        let currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
+        const maxQuantity = parseInt(maxQuantityDiv.getAttribute('data-max-quantity'), 10) || 0;
+
         if (currentValue < maxQuantity) {
           currentValue += 1;
           maxQuantityDiv.textContent = currentValue;
-          updateButtonStates();
+          updateButtonStates(container);
           updateRefundCount();
         }
       });
+
+      updateButtonStates(container); // Initial button state update
     });
   });
 </script>
