@@ -199,7 +199,7 @@
                         name="contact[{{ line_item.product.title | downcase | handleize }}-{{ line_item.variant.id }}]"
                         id="{{ line_item.variant.id }}"
                         name="{{ line_item.product.id }}"
-                        value="{{ line_item.title }}"
+                        value="{{ line_item.title }} x 1"
                         data-line-item-id="{{ line_item.id }}"
                         data-checkbox="true"
                         {% if refund_line_item_id contains line_item.id %}
