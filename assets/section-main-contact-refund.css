@@ -195,6 +195,7 @@
   font-style: normal;
   font-weight: var(--font-weight-500);
   line-height: 1.5;
+  margin: 0;
 }
 
 .sm-salomon__order-details-variant {
@@ -205,6 +206,7 @@
   font-weight: var(--font-weight-400);
   line-height: 1.5;
   color: var(--color-grey-02);
+  margin: 0;
 }
 
 .sm-salomon__input.sm-salomon__input--list-of-products {
