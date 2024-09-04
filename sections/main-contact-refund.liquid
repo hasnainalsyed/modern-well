@@ -337,8 +337,12 @@
         if (checkbox.checked) {
           const container = checkbox.parentElement;
           const maxQuantityElem = container.querySelector('[data-max-quantity]');
-          const maxQuantity = parseInt(maxQuantityElem?.textContent, 10) || 0;
-          totalQuantity += maxQuantity;
+          const quantity = parseInt(maxQuantityElem.textContent, 10) || 0;
+          totalQuantity += quantity;
+          // Update the input value for each checkbox
+          const input = container.querySelector('[data-checkbox]');
+          const itemDescription = input.value.split(' x ')[0];
+          input.value = `${itemDescription} x ${quantity}`;
         }
       });
       refundItemsInput.value = totalQuantity;
@@ -372,12 +376,14 @@
     document.querySelectorAll('[data-order-quantity-container]').forEach((container) => {
       const minusBtn = container.querySelector('[data-quantity-minus]');
       const plusBtn = container.querySelector('[data-quantity-plus]');
+      const maxQuantityDiv = container.querySelector('[data-max-quantity]');
+      let currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
+      const maxQuantity = parseInt(maxQuantityDiv.getAttribute('data-max-quantity'), 10) || 0;
+
+      updateButtonStates(container); // Initial button state update
 
       minusBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        const maxQuantityDiv = container.querySelector('[data-max-quantity]');
-        let currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
-
         if (currentValue > 1) {
           currentValue -= 1;
           maxQuantityDiv.textContent = currentValue;
@@ -388,10 +394,6 @@
 
       plusBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        const maxQuantityDiv = container.querySelector('[data-max-quantity]');
-        let currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
-        const maxQuantity = parseInt(maxQuantityDiv.getAttribute('data-max-quantity'), 10) || 0;
-
         if (currentValue < maxQuantity) {
           currentValue += 1;
           maxQuantityDiv.textContent = currentValue;
@@ -399,8 +401,6 @@
           updateRefundCount();
         }
       });
-
-      updateButtonStates(container); // Initial button state update
     });
   });
 </script>
