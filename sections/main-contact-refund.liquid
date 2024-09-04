@@ -349,12 +349,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (checkbox.checked) {
           // Assuming the data-max-quantity input is within the same parent container as the checkbox
           let container = checkbox.parentElement;
-          let maxQuantityInput = container.querySelector('input[data-max-quantity]');
+          let maxQuantityInput = container.querySelector('[data-max-quantity]');
           console.log(maxQuantityInput);
 
           if (maxQuantityInput) {
             // Parse the value of maxQuantity as an integer
-            let maxQuantity = parseInt(maxQuantityInput.value, 10) || 0;
+            let maxQuantity = parseInt(maxQuantityInput.textContent, 10) || 0;
             totalQuantity += maxQuantity;
           }
         }
