@@ -323,84 +323,6 @@
       }
     });
 
-    // const refundLineItemId = '{{ refund_line_item_id }}';
-    // const checkboxes = document.querySelectorAll('[data-list-of-checkboxes] [data-checkbox]');
-    // const refundItemsInput = document.querySelector('[data-refund-items-count]');
-
-    // let initialRefundCount = parseInt(refundItemsInput.value, 10) || 0;
-
-    // function updateRefundCount() {
-    //   let totalQuantity = 0;
-    //   checkboxes.forEach((checkbox) => {
-    //     if (checkbox.checked) {
-    //       const container = checkbox.parentElement;
-    //       const maxQuantityElem = container.querySelector('[data-max-quantity]');
-    //       const quantity = parseInt(maxQuantityElem.textContent, 10) || 0;
-    //       totalQuantity += quantity;
-    //       // Update the input value for each checkbox
-    //       const input = container.querySelector('[data-checkbox]');
-    //       const itemDescription = input.value.split(' x ')[0];
-    //       input.value = `${itemDescription} x ${quantity}`;
-    //     }
-    //   });
-    //   refundItemsInput.value = totalQuantity;
-    // }
-
-    // function updateButtonStates(container) {
-    //   const minusBtn = container.querySelector('[data-quantity-minus]');
-    //   const plusBtn = container.querySelector('[data-quantity-plus]');
-    //   const maxQuantityDiv = container.querySelector('[data-max-quantity]');
-    //   const currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
-    //   const maxQuantity = parseInt(maxQuantityDiv.getAttribute('data-max-quantity'), 10) || 0;
-
-    //   minusBtn.classList.toggle('sm-salomon__order-quantity-btn--disabled', currentValue <= 1);
-    //   plusBtn.classList.toggle('sm-salomon__order-quantity-btn--disabled', currentValue >= maxQuantity);
-    // }
-
-    // function handleCheckboxChange(checkbox) {
-    //   const parentDiv = checkbox.closest('.sm-salomon__list-of-checkbox');
-    //   parentDiv.classList.toggle('sm-salomon__list-of-checkbox--checked', checkbox.checked);
-    //   updateRefundCount();
-    // }
-
-    // checkboxes.forEach((checkbox) => {
-    //   if (checkbox.getAttribute('data-line-item-id') === refundLineItemId) {
-    //     checkbox.checked = true;
-    //   }
-    //   checkbox.addEventListener('change', () => handleCheckboxChange(checkbox));
-    //   handleCheckboxChange(checkbox); // Initial state update
-    // });
-
-    // document.querySelectorAll('[data-order-quantity-container]').forEach((container) => {
-    //   const minusBtn = container.querySelector('[data-quantity-minus]');
-    //   const plusBtn = container.querySelector('[data-quantity-plus]');
-    //   const maxQuantityDiv = container.querySelector('[data-max-quantity]');
-    //   let currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
-    //   const maxQuantity = parseInt(maxQuantityDiv.getAttribute('data-max-quantity'), 10) || 0;
-
-    //   updateButtonStates(container); // Initial button state update
-
-    //   minusBtn.addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     if (currentValue > 1) {
-    //       currentValue -= 1;
-    //       maxQuantityDiv.textContent = currentValue;
-    //       updateButtonStates(container);
-    //       updateRefundCount();
-    //     }
-    //   });
-
-    //   plusBtn.addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     if (currentValue < maxQuantity) {
-    //       currentValue += 1;
-    //       maxQuantityDiv.textContent = currentValue;
-    //       updateButtonStates(container);
-    //       updateRefundCount();
-    //     }
-    //   });
-    // });
-
     const refundLineItemId = '{{ refund_line_item_id }}';
     const checkboxes = document.querySelectorAll('[data-list-of-checkboxes] [data-checkbox]');
     const refundItemsInput = document.querySelector('[data-refund-items-count]');
@@ -412,8 +334,8 @@
       checkboxes.forEach((checkbox) => {
         if (checkbox.checked) {
           const container = checkbox.parentElement;
-          const selectElem = container.querySelector('[data-order-quantity-select]');
-          const quantity = parseInt(selectElem.value, 10) || 0;
+          const quantitySelect = container.querySelector('[data-order-quantity-select]');
+          const quantity = parseInt(quantitySelect.value, 10) || 0;
           totalQuantity += quantity;
           // Update the input value for each checkbox
           const input = container.querySelector('[data-checkbox]');
@@ -438,16 +360,13 @@
       handleCheckboxChange(checkbox); // Initial state update
     });
 
-    // Handle the dropdown change event
     document.querySelectorAll('[data-order-quantity-container]').forEach((container) => {
-      const selectElem = container.querySelector('[data-order-quantity-select]');
-
-      selectElem.addEventListener('change', () => {
-        updateRefundCount();
-      });
-
-      // Update refund count based on the initial selected value
-      updateRefundCount();
+      const quantitySelect = container.querySelector('[data-order-quantity-select]');
+      if (quantitySelect) {
+        quantitySelect.addEventListener('change', () => {
+          updateRefundCount();
+        });
+      }
     });
   });
 </script>
