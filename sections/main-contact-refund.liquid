@@ -230,13 +230,11 @@
                             </div>
                           </label>
                           <div class="sm-salomon__order-quantity" data-order-quantity-container="">
-                            <a href="javascript:void()" class="sm-salomon__order-quantity-btn" data-quantity-minus="">
-                              {% render 'icon-left' %}
-                            </a>
-                            <div data-max-quantity="{{ line_item.quantity }}">1</div>
-                            <a href="javascript:void()" class="sm-salomon__order-quantity-btn" data-quantity-plus="">
-                              {% render 'icon-right' %}
-                            </a>
+                            <select id="quantity-select" data-order-quantity-select="">
+                              {% for i in (1..line_item.quantity) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                              {% endfor %}
+                            </select>
                           </div>
                         </div>
                       </div>
@@ -300,10 +298,10 @@
       });
     });
 
-    var alertShown = false;
+    let alertShown = false;
     document.getElementById('contact_form').addEventListener('submit', function (event) {
-      var inputs = document.querySelectorAll('[data-required]');
-      var isValid = true;
+      let inputs = document.querySelectorAll('[data-required]');
+      let isValid = true;
 
       inputs.forEach(function (input) {
         if (input.value.trim() === '') {
@@ -325,6 +323,84 @@
       }
     });
 
+    // const refundLineItemId = '{{ refund_line_item_id }}';
+    // const checkboxes = document.querySelectorAll('[data-list-of-checkboxes] [data-checkbox]');
+    // const refundItemsInput = document.querySelector('[data-refund-items-count]');
+
+    // let initialRefundCount = parseInt(refundItemsInput.value, 10) || 0;
+
+    // function updateRefundCount() {
+    //   let totalQuantity = 0;
+    //   checkboxes.forEach((checkbox) => {
+    //     if (checkbox.checked) {
+    //       const container = checkbox.parentElement;
+    //       const maxQuantityElem = container.querySelector('[data-max-quantity]');
+    //       const quantity = parseInt(maxQuantityElem.textContent, 10) || 0;
+    //       totalQuantity += quantity;
+    //       // Update the input value for each checkbox
+    //       const input = container.querySelector('[data-checkbox]');
+    //       const itemDescription = input.value.split(' x ')[0];
+    //       input.value = `${itemDescription} x ${quantity}`;
+    //     }
+    //   });
+    //   refundItemsInput.value = totalQuantity;
+    // }
+
+    // function updateButtonStates(container) {
+    //   const minusBtn = container.querySelector('[data-quantity-minus]');
+    //   const plusBtn = container.querySelector('[data-quantity-plus]');
+    //   const maxQuantityDiv = container.querySelector('[data-max-quantity]');
+    //   const currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
+    //   const maxQuantity = parseInt(maxQuantityDiv.getAttribute('data-max-quantity'), 10) || 0;
+
+    //   minusBtn.classList.toggle('sm-salomon__order-quantity-btn--disabled', currentValue <= 1);
+    //   plusBtn.classList.toggle('sm-salomon__order-quantity-btn--disabled', currentValue >= maxQuantity);
+    // }
+
+    // function handleCheckboxChange(checkbox) {
+    //   const parentDiv = checkbox.closest('.sm-salomon__list-of-checkbox');
+    //   parentDiv.classList.toggle('sm-salomon__list-of-checkbox--checked', checkbox.checked);
+    //   updateRefundCount();
+    // }
+
+    // checkboxes.forEach((checkbox) => {
+    //   if (checkbox.getAttribute('data-line-item-id') === refundLineItemId) {
+    //     checkbox.checked = true;
+    //   }
+    //   checkbox.addEventListener('change', () => handleCheckboxChange(checkbox));
+    //   handleCheckboxChange(checkbox); // Initial state update
+    // });
+
+    // document.querySelectorAll('[data-order-quantity-container]').forEach((container) => {
+    //   const minusBtn = container.querySelector('[data-quantity-minus]');
+    //   const plusBtn = container.querySelector('[data-quantity-plus]');
+    //   const maxQuantityDiv = container.querySelector('[data-max-quantity]');
+    //   let currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
+    //   const maxQuantity = parseInt(maxQuantityDiv.getAttribute('data-max-quantity'), 10) || 0;
+
+    //   updateButtonStates(container); // Initial button state update
+
+    //   minusBtn.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     if (currentValue > 1) {
+    //       currentValue -= 1;
+    //       maxQuantityDiv.textContent = currentValue;
+    //       updateButtonStates(container);
+    //       updateRefundCount();
+    //     }
+    //   });
+
+    //   plusBtn.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     if (currentValue < maxQuantity) {
+    //       currentValue += 1;
+    //       maxQuantityDiv.textContent = currentValue;
+    //       updateButtonStates(container);
+    //       updateRefundCount();
+    //     }
+    //   });
+    // });
+
     const refundLineItemId = '{{ refund_line_item_id }}';
     const checkboxes = document.querySelectorAll('[data-list-of-checkboxes] [data-checkbox]');
     const refundItemsInput = document.querySelector('[data-refund-items-count]');
@@ -336,8 +412,8 @@
       checkboxes.forEach((checkbox) => {
         if (checkbox.checked) {
           const container = checkbox.parentElement;
-          const maxQuantityElem = container.querySelector('[data-max-quantity]');
-          const quantity = parseInt(maxQuantityElem.textContent, 10) || 0;
+          const selectElem = container.querySelector('[data-order-quantity-select]');
+          const quantity = parseInt(selectElem.value, 10) || 0;
           totalQuantity += quantity;
           // Update the input value for each checkbox
           const input = container.querySelector('[data-checkbox]');
@@ -346,17 +422,6 @@
         }
       });
       refundItemsInput.value = totalQuantity;
-    }
-
-    function updateButtonStates(container) {
-      const minusBtn = container.querySelector('[data-quantity-minus]');
-      const plusBtn = container.querySelector('[data-quantity-plus]');
-      const maxQuantityDiv = container.querySelector('[data-max-quantity]');
-      const currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
-      const maxQuantity = parseInt(maxQuantityDiv.getAttribute('data-max-quantity'), 10) || 0;
-
-      minusBtn.classList.toggle('sm-salomon__order-quantity-btn--disabled', currentValue <= 1);
-      plusBtn.classList.toggle('sm-salomon__order-quantity-btn--disabled', currentValue >= maxQuantity);
     }
 
     function handleCheckboxChange(checkbox) {
@@ -373,34 +438,16 @@
       handleCheckboxChange(checkbox); // Initial state update
     });
 
+    // Handle the dropdown change event
     document.querySelectorAll('[data-order-quantity-container]').forEach((container) => {
-      const minusBtn = container.querySelector('[data-quantity-minus]');
-      const plusBtn = container.querySelector('[data-quantity-plus]');
-      const maxQuantityDiv = container.querySelector('[data-max-quantity]');
-      let currentValue = parseInt(maxQuantityDiv.textContent, 10) || 0;
-      const maxQuantity = parseInt(maxQuantityDiv.getAttribute('data-max-quantity'), 10) || 0;
+      const selectElem = container.querySelector('[data-order-quantity-select]');
 
-      updateButtonStates(container); // Initial button state update
-
-      minusBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (currentValue > 1) {
-          currentValue -= 1;
-          maxQuantityDiv.textContent = currentValue;
-          updateButtonStates(container);
-          updateRefundCount();
-        }
+      selectElem.addEventListener('change', () => {
+        updateRefundCount();
       });
 
-      plusBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (currentValue < maxQuantity) {
-          currentValue += 1;
-          maxQuantityDiv.textContent = currentValue;
-          updateButtonStates(container);
-          updateRefundCount();
-        }
-      });
+      // Update refund count based on the initial selected value
+      updateRefundCount();
     });
   });
 </script>
