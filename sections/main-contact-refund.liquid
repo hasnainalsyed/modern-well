@@ -229,7 +229,7 @@
                               </h5>
                             </div>
                           </label>
-                          <div class="sm-salomon__order-quantity" data-order-quantity-container="">
+                          <div class="sm-salomon__order-quantity" data-order-quantity-container="" hidden='true'>
                             <select id="quantity-select" data-order-quantity-select="">
                               {% for i in (1..line_item.quantity) %}
                                 <option value="{{ i }}">{{ i }}</option>
@@ -347,8 +347,17 @@
     }
 
     function handleCheckboxChange(checkbox) {
-      const parentDiv = checkbox.closest('.sm-salomon__list-of-checkbox');
-      parentDiv.classList.toggle('sm-salomon__list-of-checkbox--checked', checkbox.checked);
+      const mainContainer = checkbox.parentElement;
+      const orderQuantityContainer = mainContainer.querySelector('[data-order-quantity-container]');
+
+      if (checkbox.checked) {
+        mainContainer.classList.add('sm-salomon__list-of-checkbox--checked');
+        orderQuantityContainer.removeAttribute('hidden'); // Show the dropdown
+      } else {
+        mainContainer.classList.remove('sm-salomon__list-of-checkbox--checked');
+        orderQuantityContainer.setAttribute('hidden', 'true'); // Hide the dropdown
+      }
+
       updateRefundCount();
     }
 
