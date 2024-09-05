@@ -305,6 +305,10 @@
   border: 1px solid var(--color-grey-14);
 }
 
+sm-salomon__order-quantity[hidden] {
+  display: none;
+}
+
 .sm-salomon__order-quantity [data-max-quantity] {
   border: 0;
   padding: 0;
