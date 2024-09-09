@@ -119,6 +119,20 @@
               class="email required sm-salomon__contact-phone"
               name="contact[phone]"
             >
+
+            <label
+              class="as-wilson__contact-label hidden"
+              data-error-phone-incorrect
+            >
+              휴대폰 번호를 다시 확인해 주세요.
+            </label>
+
+            <label
+              class="as-wilson__contact-label hidden"
+              data-error-message
+            >
+              전화번호를 업데이트하세요.
+            </label>
           </div>
         </div>
         <div class="input-row">
@@ -287,39 +301,55 @@
 </div>
 
 <script>
+  function formatPhoneNumber(number) {
+    // Assuming a format like: +1 (123) 456-7890
+    return `+${number.slice(0, 1)} (${number.slice(1, 4)}) ${number.slice(4, 7)}-${number.slice(7)}`;
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
-    const phoneNumberInputs = document.querySelectorAll('[data-phoneNumber], [data-orderNumber]');
-    phoneNumberInputs.forEach(function (input) {
-      input.addEventListener('keypress', function (e) {
-        const charCode = e.which ? e.which : e.keyCode;
-        if (String.fromCharCode(charCode).match(/[^0-9]/g)) {
-          e.preventDefault();
-        }
-      });
+    const errorMessage = document.querySelector('[data-error-message]');
+    const customerPhone = document.querySelector('[data-customer-phone]');
+    const errorPhoneIncorrect = document.querySelector('[data-error-phone-incorrect]');
+    let registerPhoneNumber = customerPhone.dataset.customerPhone || '';
+
+    if (registerPhoneNumber) {
+      customerPhone.textContent = formatPhoneNumber(registerPhoneNumber);
+    }
+
+    customerPhone.addEventListener('input', () => {
+      // Hide any error messages when the phone number is being changed
+      if (!errorMessage.classList.contains('hidden')) {
+        errorMessage.classList.add('hidden');
+      }
+      if (!errorPhoneIncorrect.classList.contains('hidden')) {
+        errorPhoneIncorrect.classList.add('hidden');
+      }
     });
 
-    let alertShown = false;
-    document.getElementById('contact_form').addEventListener('submit', function (event) {
-      let inputs = document.querySelectorAll('[data-required]');
-      let isValid = true;
+    document.getElementById('contact_form').addEventListener('submit', (e) => {
+      e.preventDefault();
 
-      inputs.forEach(function (input) {
-        if (input.value.trim() === '') {
-          isValid = false;
-        }
-      });
+      const number = customerPhone.value.trim();
 
-      if (!isValid) {
-        if (!alertShown) {
-          alertShown = true;
-          alert('* 표시된 항목은 필수 기재 항목입니다.');
-          event.preventDefault();
+      // If the phone number has changed
+      if (number !== registerPhoneNumber) {
+        // Check if the phone number contains only numbers
+        const isNumeric = /^\d+$/.test(number);
+
+        if (number.length !== 11 || !isNumeric) {
+          // Handle error for unexpected phone number length or non-numeric characters
+          console.error('Unexpected phone number length or non-numeric characters', number.length, number);
+          errorPhoneIncorrect.classList.remove('hidden');
         } else {
-          alert('* 표시된 항목은 필수 기재 항목입니다.');
-          event.preventDefault();
+          // Update the stored phone number and format it
+          registerPhoneNumber = number;
+          customerPhone.setAttribute('data-customer-phone', number);
+          customerPhone.value = formatPhoneNumber(number);
+          errorPhoneIncorrect.classList.add('hidden');
         }
       } else {
-        alertShown = false;
+        // Show error if no changes were made to the phone number
+        errorMessage.classList.remove('hidden');
       }
     });
 
@@ -351,10 +381,10 @@
       const orderQuantityContainer = mainContainer.querySelector('[data-order-quantity-container]');
 
       if (checkbox.checked) {
-        mainContainer.classList.add('sm-salomon__list-of-checkbox--checked');
+        mainContainer.classList.add('as-wilson__list-of-checkbox--checked');
         orderQuantityContainer.removeAttribute('hidden'); // Show the dropdown
       } else {
-        mainContainer.classList.remove('sm-salomon__list-of-checkbox--checked');
+        mainContainer.classList.remove('as-wilson__list-of-checkbox--checked');
         orderQuantityContainer.setAttribute('hidden', 'true'); // Hide the dropdown
       }
 
