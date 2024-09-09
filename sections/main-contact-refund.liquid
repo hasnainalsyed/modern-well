@@ -361,8 +361,10 @@
       if (valid) {
         // Submit the form if all fields are valid
         console.info('Form is valid, proceeding with submission...');
+        console.log(`message: ${message}, phone: ${number}`);
       } else {
-        return;
+        console.log(`message: ${message}, phone: ${number}`);
+        return false;
       }
     });
 
