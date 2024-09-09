@@ -55,6 +55,10 @@
   text-transform: var(--text-capitalize);
 }
 
+.sm-salomon__contact-label.hidden{
+  display: none;
+}
+
 .sm-salomon__contact-first-name,
 .sm-salomon__contact-last-name,
 .sm-salomon__contact-phone,
