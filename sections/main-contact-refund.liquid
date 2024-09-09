@@ -236,7 +236,7 @@
                               </h5>
                             </div>
                           </label>
-                          <div class="sm-salomon__order-quantity" data-order-quantity-container="" hidden='true'>
+                          <div class="sm-salomon__order-quantity" data-order-quantity-container="" hidden="true">
                             <select id="quantity-select" data-order-quantity-select="">
                               {% for i in (1..line_item.quantity) %}
                                 <option value="{{ i }}">{{ i }}</option>
@@ -301,39 +301,39 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     const customerPhone = document.querySelector('[data-customer-phone]');
-  const errorPhoneIncorrect = document.querySelector('[data-error-phone-incorrect]');
-
-  customerPhone.addEventListener('input', () => {
-    // Hide any error messages when the phone number is being changed
-    if (!errorPhoneIncorrect.classList.contains('hidden')) {
+    const errorPhoneIncorrect = document.querySelector('[data-error-phone-incorrect]');
+  
+    customerPhone.addEventListener('input', () => { 
+      // Hide any error messages when the phone number is being changed
+      if (!errorPhoneIncorrect.classList.contains('hidden')) {
+        errorPhoneIncorrect.classList.add('hidden');
+      }
+    });
+  
+    document.getElementById('contact_form').addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent form submission by default
+  
+      const number = customerPhone.value.trim();
+  
+      // Check if the phone number contains only numbers
+      const isNumeric = /^\d+$/.test(number);
+  
+      if (number.length !== 11 || !isNumeric) {
+        // Handle error for unexpected phone number length or non-numeric characters
+        console.error('Unexpected phone number length or non-numeric characters', number.length, number);
+        errorPhoneIncorrect.classList.remove('hidden');
+        return; // Stop form submission if validation fails
+      }
+  
+      // If phone number is valid, proceed with formatting and submission
+      registerPhoneNumber = number;
+      customerPhone.setAttribute('data-customer-phone', number);
+      customerPhone.value = formatPhoneNumber(number);
       errorPhoneIncorrect.classList.add('hidden');
-    }
-  });
-
-  document.getElementById('contact_form').addEventListener('submit', (e) => {
-    e.preventDefault(); // Prevent form submission by default
-
-    const number = customerPhone.value.trim();
-
-    // Check if the phone number contains only numbers
-    const isNumeric = /^\d+$/.test(number);
-
-    if (number.length !== 11 || !isNumeric) {
-      // Handle error for unexpected phone number length or non-numeric characters
-      console.error('Unexpected phone number length or non-numeric characters', number.length, number);
-      errorPhoneIncorrect.classList.remove('hidden');
-      return; // Stop form submission if validation fails
-    }
-
-    // If phone number is valid, proceed with formatting and submission
-    registerPhoneNumber = number;
-    customerPhone.setAttribute('data-customer-phone', number);
-    customerPhone.value = formatPhoneNumber(number);
-    errorPhoneIncorrect.classList.add('hidden');
-
-    // You can proceed with the form submission here if needed
-    // document.getElementById('contact_form').submit(); // Uncomment this if using traditional form submission
-  });
+  
+      // You can proceed with the form submission here if needed
+      // document.getElementById('contact_form').submit(); // Uncomment this if using traditional form submission
+    });
 
     const refundLineItemId = '{{ refund_line_item_id }}';
     const checkboxes = document.querySelectorAll('[data-list-of-checkboxes] [data-checkbox]');
