@@ -326,12 +326,8 @@
       }
   
       // If phone number is valid, proceed with formatting and submission
-      customerPhone.setAttribute('data-customer-phone', number);
       customerPhone.value = formatPhoneNumber(number);
       errorPhoneIncorrect.classList.add('hidden');
-  
-      // You can proceed with the form submission here if needed
-      // document.getElementById('contact_form').submit(); // Uncomment this if using traditional form submission
     });
 
     const refundLineItemId = '{{ refund_line_item_id }}';
