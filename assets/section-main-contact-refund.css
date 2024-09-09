@@ -53,6 +53,7 @@
   color: var(--color-grey-13);
   text-align: var(--text-left);
   text-transform: var(--text-capitalize);
+  display: block;
 }
 
 .sm-salomon__contact-label.hidden{
