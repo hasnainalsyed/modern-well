@@ -283,6 +283,13 @@
               class="required sm-salomon__inquiryDetails"
               name="contact[Inquirydetails]"
             ></textarea>
+
+            <label
+              class="as-wilson__contact-label hidden"
+              data-error-message-empty=""
+            >
+              올바른 메시지를 입력하세요.
+            </label>
           </div>
         </div>
         <div class="wide-action">
@@ -300,34 +307,60 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    const customerMessage = document.querySelector('[data-message]');
     const customerPhone = document.querySelector('[data-customer-phone]');
     const errorPhoneIncorrect = document.querySelector('[data-error-phone-incorrect]');
-  
-    customerPhone.addEventListener('input', () => { 
-      // Hide any error messages when the phone number is being changed
+    const errorMessageEmpty = document.querySelector('[data-error-message-empty]');
+
+    // Hide error messages when the phone number is being changed
+    customerPhone.addEventListener('input', () => {
       if (!errorPhoneIncorrect.classList.contains('hidden')) {
         errorPhoneIncorrect.classList.add('hidden');
       }
     });
-  
+
+    // Hide error messages when the message is being changed
+    customerMessage.addEventListener('input', () => {
+      if (!errorMessageEmpty.classList.contains('hidden')) {
+        errorMessageEmpty.classList.add('hidden');
+      }
+    });
+
     document.getElementById('contact_form').addEventListener('submit', (e) => {
       e.preventDefault(); // Prevent form submission by default
-  
+
       const number = customerPhone.value.trim();
-  
+      const message = customerMessage.value.trim();
+
       // Check if the phone number contains only numbers
       const isNumeric = /^\d+$/.test(number);
-  
+      let valid = true; // Use this to track overall form validity
+
+      // Validate phone number
       if (number.length !== 11 || !isNumeric) {
-        // Handle error for unexpected phone number length or non-numeric characters
         console.error('Unexpected phone number length or non-numeric characters', number.length, number);
         errorPhoneIncorrect.classList.remove('hidden');
-        return; // Stop form submission if validation fails
+        valid = false; // Mark form as invalid if phone number fails validation
+      } else {
+        // Format the phone number if valid
+        customerPhone.value = formatPhoneNumber(number);
+        errorPhoneIncorrect.classList.add('hidden');
       }
-  
-      // If phone number is valid, proceed with formatting and submission
-      customerPhone.value = formatPhoneNumber(number);
-      errorPhoneIncorrect.classList.add('hidden');
+
+      // Validate customer message (ensure it's not empty)
+      if (message.length === 0) {
+        console.error('Message cannot be empty');
+        errorMessageEmpty.classList.remove('hidden');
+        valid = false; // Mark form as invalid if message is empty
+      } else {
+        errorMessageEmpty.classList.add('hidden');
+      }
+
+      // If everything is valid, proceed with form submission or other actions
+      if (valid) {
+        // Submit the form if all fields are valid
+        console.info('Form is valid, proceeding with submission...');
+      }
     });
 
     const refundLineItemId = '{{ refund_line_item_id }}';
