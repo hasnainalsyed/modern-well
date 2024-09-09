@@ -307,20 +307,11 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    const errorMessage = document.querySelector('[data-error-message]');
     const customerPhone = document.querySelector('[data-customer-phone]');
     const errorPhoneIncorrect = document.querySelector('[data-error-phone-incorrect]');
-    let registerPhoneNumber = customerPhone.dataset.customerPhone || '';
-
-    if (registerPhoneNumber) {
-      customerPhone.textContent = formatPhoneNumber(registerPhoneNumber);
-    }
 
     customerPhone.addEventListener('input', () => {
       // Hide any error messages when the phone number is being changed
-      if (!errorMessage.classList.contains('hidden')) {
-        errorMessage.classList.add('hidden');
-      }
       if (!errorPhoneIncorrect.classList.contains('hidden')) {
         errorPhoneIncorrect.classList.add('hidden');
       }
@@ -331,25 +322,19 @@
 
       const number = customerPhone.value.trim();
 
-      // If the phone number has changed
-      if (number !== registerPhoneNumber) {
-        // Check if the phone number contains only numbers
-        const isNumeric = /^\d+$/.test(number);
+      // Check if the phone number contains only numbers
+      const isNumeric = /^\d+$/.test(number);
 
-        if (number.length !== 11 || !isNumeric) {
-          // Handle error for unexpected phone number length or non-numeric characters
-          console.error('Unexpected phone number length or non-numeric characters', number.length, number);
-          errorPhoneIncorrect.classList.remove('hidden');
-        } else {
-          // Update the stored phone number and format it
-          registerPhoneNumber = number;
-          customerPhone.setAttribute('data-customer-phone', number);
-          customerPhone.value = formatPhoneNumber(number);
-          errorPhoneIncorrect.classList.add('hidden');
-        }
+      if (number.length !== 11 || !isNumeric) {
+        // Handle error for unexpected phone number length or non-numeric characters
+        console.error('Unexpected phone number length or non-numeric characters', number.length, number);
+        errorPhoneIncorrect.classList.remove('hidden');
       } else {
-        // Show error if no changes were made to the phone number
-        errorMessage.classList.remove('hidden');
+        // Update the stored phone number and format it
+        registerPhoneNumber = number;
+        customerPhone.setAttribute('data-customer-phone', number);
+        customerPhone.value = formatPhoneNumber(number);
+        errorPhoneIncorrect.classList.add('hidden');
       }
     });
 
@@ -381,10 +366,10 @@
       const orderQuantityContainer = mainContainer.querySelector('[data-order-quantity-container]');
 
       if (checkbox.checked) {
-        mainContainer.classList.add('sm-salomon__list-of-checkbox--checked');
+        mainContainer.classList.add('as-wilson__list-of-checkbox--checked');
         orderQuantityContainer.removeAttribute('hidden'); // Show the dropdown
       } else {
-        mainContainer.classList.remove('sm-salomon__list-of-checkbox--checked');
+        mainContainer.classList.remove('as-wilson__list-of-checkbox--checked');
         orderQuantityContainer.setAttribute('hidden', 'true'); // Hide the dropdown
       }
 
