@@ -56,8 +56,8 @@
       "name": "Social media",
       "settings": {
         "social_twitter_link": {
-          "label": "X / voorheen Twitter",
-          "info": "https://x.com/shopify"
+          "label": "Twitter",
+          "info": "https://twitter.com/shopify"
         },
         "social_facebook_link": {
           "label": "Facebook",
@@ -395,9 +395,6 @@
         },
         "options__4": {
           "label": "Extra groot"
-        },
-        "options__5": {
-          "label": "Extra extra groot"
         }
       },
       "image_shape": {
@@ -454,8 +451,7 @@
           "name": "Aankondiging",
           "settings": {
             "text": {
-              "label": "Tekst",
-              "default": "Welkom in onze winkel"
+              "label": "Tekst"
             },
             "text_alignment": {
               "label": "Tekstuitlijning",
@@ -515,8 +511,7 @@
       "name": "Collage",
       "settings": {
         "heading": {
-          "label": "Opschrift",
-          "default": "Multimediacollage"
+          "label": "Opschrift"
         },
         "desktop_layout": {
           "label": "Opmaak bureaublad",
@@ -591,8 +586,7 @@
             },
             "description": {
               "label": "Alt-tekst video",
-              "info": "Geef een beschrijving van de video voor klanten die schermlezers gebruiken. [Meer informatie](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
-              "default": "Beschrijf de video"
+              "info": "Geef een beschrijving van de video voor klanten die schermlezers gebruiken. [Meer informatie](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)"
             }
           }
         }
@@ -605,8 +599,7 @@
       "name": "Collectielijst",
       "settings": {
         "title": {
-          "label": "Opschrift",
-          "default": "Collecties"
+          "label": "Opschrift"
         },
         "image_ratio": {
           "label": "Breedte-/hoogteverhouding van afbeeldingen",
@@ -617,7 +610,7 @@
             "label": "Portret"
           },
           "options__3": {
-            "label": "Vierkant"
+            "label": "Square"
           },
           "info": "Voeg afbeeldingen toe door je collecties bij te werken. [Meer informatie](https://help.shopify.com/manual/products/collections)"
         },
@@ -661,12 +654,6 @@
       "name": "Contactformulier",
       "presets": {
         "name": "Contactformulier"
-      },
-      "settings": {
-        "title": {
-          "default": "Contactformulier",
-          "label": "Koptekst"
-        }
       }
     },
     "custom-liquid": {
@@ -685,8 +672,7 @@
       "name": "Blogberichten",
       "settings": {
         "heading": {
-          "label": "Opschrift",
-          "default": "Blogposts"
+          "label": "Opschrift"
         },
         "blog": {
           "label": "Blog"
@@ -719,8 +705,7 @@
       "name": "Uitgelichte collectie",
       "settings": {
         "title": {
-          "label": "Opschrift",
-          "default": "Uitgelichte collectie"
+          "label": "Opschrift"
         },
         "collection": {
           "label": "Collectie"
@@ -743,7 +728,7 @@
             "label": "Portret"
           },
           "options__3": {
-            "label": "Vierkant"
+            "label": "Square"
           }
         },
         "show_secondary_image": {
@@ -826,8 +811,7 @@
           "name": "Menu",
           "settings": {
             "heading": {
-              "label": "Opschrift",
-              "default": "Snelle links"
+              "label": "Opschrift"
             },
             "menu": {
               "label": "Menu",
@@ -839,12 +823,10 @@
           "name": "Tekst",
           "settings": {
             "heading": {
-              "label": "Opschrift",
-              "default": "Koptekst"
+              "label": "Opschrift"
             },
             "subtext": {
-              "label": "Subtekst",
-              "default": "<p>Deel contactgegevens, winkelgegevens en merkcontent met klanten.</p>"
+              "label": "Subtekst"
             }
           }
         },
@@ -869,8 +851,7 @@
           "label": "Aanmelding voor het ontvangen van e-mail weergeven"
         },
         "newsletter_heading": {
-          "label": "Opschrift",
-          "default": "Abonneren op onze e-mails"
+          "label": "Opschrift"
         },
         "header__1": {
           "content": "Aanmelding voor het ontvangen van e-mail",
@@ -1019,14 +1000,6 @@
         },
         "menu_color_scheme": {
           "label": "Kleurschemamenu"
-        },
-        "header__7": {
-          "content": "Inloggen bij klantaccounts",
-          "info": "Ga om klantaccounts te beheren naar je instellingen voor klantaccounts ](/admin/settings/customer_accounts)."
-        },
-        "enable_customer_avatar": {
-          "label": "Avatar weergeven",
-          "info": "Klanten kunnen de avatar alleen zien als ze zijn ingelogd bij Shop"
         }
       }
     },
@@ -1130,8 +1103,7 @@
           "name": "Opschrift",
           "settings": {
             "heading": {
-              "label": "Opschrift",
-              "default": "Banner voor afbeeldingen"
+              "label": "Opschrift"
             }
           }
         },
@@ -1139,8 +1111,7 @@
           "name": "Tekstkleur",
           "settings": {
             "text": {
-              "label": "Beschrijving",
-              "default": "Geef klanten details over de bannerafbeelding(en) of content op de template."
+              "label": "Beschrijving"
             },
             "text_style": {
               "options__1": {
@@ -1161,8 +1132,7 @@
           "settings": {
             "button_label_1": {
               "label": "Eerste knoplabel",
-              "info": "Laat het label leeg om de knop te verbergen.",
-              "default": "Knoplabel"
+              "info": "Laat het label leeg om de knop te verbergen."
             },
             "button_link_1": {
               "label": "Eerste knoplink"
@@ -1172,8 +1142,7 @@
             },
             "button_label_2": {
               "label": "Tweede knoplabel",
-              "info": "Laat het label leeg om de knop te verbergen.",
-              "default": "Knoplabel"
+              "info": "Laat het label leeg om de knop te verbergen."
             },
             "button_link_2": {
               "label": "Tweede knoplink"
@@ -1283,8 +1252,7 @@
           "name": "Opschrift",
           "settings": {
             "heading": {
-              "label": "Opschrift",
-              "default": "Afbeelding met tekst"
+              "label": "Opschrift"
             }
           }
         },
@@ -1292,8 +1260,7 @@
           "name": "Tekst",
           "settings": {
             "text": {
-              "label": "Content",
-              "default": "<p>Plaats een afbeelding bij stukken tekst om de aandacht op je gekozen product, collectie of blogpost te richten. Voeg details over beschikbaarheid en stijl toe of plaats een productrecensie.</p>"
+              "label": "Content"
             },
             "text_style": {
               "label": "Tekststijl",
@@ -1311,8 +1278,7 @@
           "settings": {
             "button_label": {
               "label": "Knop met tekstlabel",
-              "info": "Laat het label leeg om de knop te verbergen.",
-              "default": "Knoplabel"
+              "info": "Laat het label leeg om de knop te verbergen."
             },
             "button_link": {
               "label": "Knop met link"
@@ -1326,8 +1292,7 @@
           "name": "Bijschrift",
           "settings": {
             "text": {
-              "label": "Tekst",
-              "default": "Voeg een tagline toe"
+              "label": "Tekst"
             },
             "text_style": {
               "label": "Tekststijl",
@@ -1405,8 +1370,7 @@
               "content": "Een winkelnaam en beschrijving worden weergegeven in de voorbeeldafbeelding. [Meer informatie](https://help.shopify.com/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)"
             },
             "text": {
-              "label": "Tekst",
-              "default": "Delen"
+              "label": "Tekst"
             }
           }
         }
@@ -1502,7 +1466,7 @@
             "label": "Portret"
           },
           "options__3": {
-            "label": "Vierkant"
+            "label": "Square"
           }
         },
         "show_secondary_image": {
@@ -1547,6 +1511,10 @@
             "label": "2 kolommen"
           }
         },
+        "enable_quick_buy": {
+          "label": "Knop 'Snel toevoegen' inschakelen",
+          "info": "Optimaal met een pop-up of een winkelwagentype."
+        },
         "filter_type": {
           "label": "Opmaak voor desktopfilter",
           "options__1": {
@@ -1559,15 +1527,6 @@
             "label": "Lade"
           },
           "info": "Lade is de standaardopmaak voor mobiele apparaten"
-        },
-        "quick_add": {
-          "label": "Snel toevoegen",
-          "info": "Bulk is geoptimaliseerd voor artikelen waar hogere aantallen van zijn gekocht.",
-          "options": {
-            "option_1": "Geen",
-            "option_2": "Standaard",
-            "option_3": "Bulk"
-          }
         }
       }
     },
@@ -1575,8 +1534,7 @@
       "name": "Pagina collectielijst",
       "settings": {
         "title": {
-          "label": "Opschrift",
-          "default": "Collecties"
+          "label": "Opschrift"
         },
         "sort": {
           "label": "Collecties sorteren op:",
@@ -1608,7 +1566,7 @@
             "label": "Portret"
           },
           "options__3": {
-            "label": "Vierkant"
+            "label": "Square"
           },
           "info": "Voeg afbeeldingen toe door je collecties bij te werken. [Meer informatie](https://help.shopify.com/manual/products/collections)"
         },
@@ -1653,8 +1611,7 @@
           "name": "Tekst",
           "settings": {
             "text": {
-              "label": "Tekst",
-              "default": "Tekstblok"
+              "label": "Tekst"
             },
             "text_style": {
               "label": "TextStyle",
@@ -1683,25 +1640,12 @@
           "name": "Variantkiezer",
           "settings": {
             "picker_type": {
-              "label": "Stijl",
+              "label": "Type",
               "options__1": {
                 "label": "Vervolgkeuzelijst"
               },
               "options__2": {
                 "label": "Pillen"
-              }
-            },
-            "swatch_shape": {
-              "label": "Staal",
-              "info": "Schakel [stalen](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-settings#options-with-swatches) in bij productopties.",
-              "options__1": {
-                "label": "Cirkel"
-              },
-              "options__2": {
-                "label": "Vierkant"
-              },
-              "options__3": {
-                "label": "Geen"
               }
             }
           }
@@ -1735,8 +1679,7 @@
               "content": "Een winkelnaam en beschrijving worden weergegeven in de voorbeeldafbeelding. [Meer informatie](https://help.shopify.com/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)"
             },
             "text": {
-              "label": "Tekst",
-              "default": "Delen"
+              "label": "Tekst"
             }
           }
         },
@@ -1745,8 +1688,7 @@
           "settings": {
             "heading": {
               "info": "Gebruik een kop die de content verklaart.",
-              "label": "Opschrift",
-              "default": "Inklapbare rij"
+              "label": "Opschrift"
             },
             "content": {
               "label": "Content rij"
@@ -1895,8 +1837,7 @@
           "name": "Pop-up",
           "settings": {
             "link_label": {
-              "label": "Link-label",
-              "default": "Tekst voor pop-uplink"
+              "label": "Link-label"
             },
             "page": {
               "label": "Pagina"
@@ -1918,8 +1859,7 @@
               "content": "Als je aanvullende producten wilt selecteren, voeg je de Search en Zichtbaarheid-app toe. [Meer informatie](https://help.shopify.com/manual/online-store/search-and-discovery/product-recommendations)"
             },
             "heading": {
-              "label": "Koptekst",
-              "default": "Gaat goed samen met"
+              "label": "Koptekst"
             },
             "make_collapsible_row": {
               "label": "Weergeven als inklapbare rij"
@@ -1982,8 +1922,7 @@
               "label": "Eerste afbeelding"
             },
             "heading_1": {
-              "label": "Eerste opschrift",
-              "default": "Koptekst"
+              "label": "Eerste opschrift"
             },
             "icon_2": {
               "label": "Tweede pictogram"
@@ -1992,8 +1931,7 @@
               "label": "Tweede afbeelding"
             },
             "heading_2": {
-              "label": "Tweede opschrift",
-              "default": "Koptekst"
+              "label": "Tweede opschrift"
             },
             "icon_3": {
               "label": "Derde pictogram"
@@ -2002,8 +1940,7 @@
               "label": "Derde afbeelding"
             },
             "heading_3": {
-              "label": "Derde opschrift",
-              "default": "Koptekst"
+              "label": "Derde opschrift"
             }
           }
         },
@@ -2152,7 +2089,7 @@
             "label": "Portret"
           },
           "options__3": {
-            "label": "Vierkant"
+            "label": "Square"
           }
         },
         "show_secondary_image": {
@@ -2199,8 +2136,7 @@
       "name": "Meerdere kolommen",
       "settings": {
         "title": {
-          "label": "Opschrift",
-          "default": "Meerdere kolommen"
+          "label": "Opschrift"
         },
         "image_width": {
           "label": "Breedte afbeelding",
@@ -2223,7 +2159,7 @@
             "label": "Portret"
           },
           "options__3": {
-            "label": "Vierkant"
+            "label": "Square"
           },
           "options__4": {
             "label": "Cirkel"
@@ -2248,8 +2184,7 @@
           }
         },
         "button_label": {
-          "label": "Knop met tekstlabel",
-          "default": "Knoplabel"
+          "label": "Knop met tekstlabel"
         },
         "button_link": {
           "label": "Knop met link"
@@ -2281,12 +2216,10 @@
               "label": "Afbeelding"
             },
             "title": {
-              "label": "Opschrift",
-              "default": "Kolom"
+              "label": "Opschrift"
             },
             "text": {
-              "label": "Beschrijving",
-              "default": "<p>Plaats een afbeelding bij stukken tekst om de aandacht op je gekozen product, collectie of blogpost te richten. Voeg details over beschikbaarheid en stijl toe of plaats een productrecensie.</p>"
+              "label": "Beschrijving"
             },
             "link_label": {
               "label": "Link-label"
@@ -2316,8 +2249,7 @@
           "name": "Opschrift",
           "settings": {
             "heading": {
-              "label": "Opschrift",
-              "default": "Abonneren op onze e-mails"
+              "label": "Opschrift"
             }
           }
         },
@@ -2325,8 +2257,7 @@
           "name": "Subkop",
           "settings": {
             "paragraph": {
-              "label": "Beschrijving",
-              "default": "<p>Kom als eerste te weten als er nieuwe collecties en exclusieve aanbiedingen zijn.</p>"
+              "label": "Beschrijving"
             }
           }
         },
@@ -2386,8 +2317,7 @@
           "name": "Opschrift",
           "settings": {
             "heading": {
-              "label": "Opschrift",
-              "default": "Vertel over je merk"
+              "label": "Opschrift"
             }
           }
         },
@@ -2395,8 +2325,7 @@
           "name": "Tekstkleur",
           "settings": {
             "text": {
-              "label": "Beschrijving",
-              "default": "<p>Deel informatie over je merk met klanten. Beschrijf een product, doe aankondigingen of verwelkom klanten in je winkel.</p>"
+              "label": "Beschrijving"
             }
           }
         },
@@ -2405,8 +2334,7 @@
           "settings": {
             "button_label_1": {
               "label": "Eerste knoplabel",
-              "info": "Laat het label leeg om de knop te verbergen.",
-              "default": "Knoplabel"
+              "info": "Laat het label leeg om de knop te verbergen."
             },
             "button_link_1": {
               "label": "Eerste knoplink"
@@ -2430,8 +2358,7 @@
           "name": "Bijschrift",
           "settings": {
             "text": {
-              "label": "Tekst",
-              "default": "Voeg een tagline toe"
+              "label": "Tekst"
             },
             "text_style": {
               "label": "Tekststijl",
@@ -2476,8 +2403,7 @@
       "name": "Video",
       "settings": {
         "heading": {
-          "label": "Opschrift",
-          "default": "Video"
+          "label": "Opschrift"
         },
         "cover_image": {
           "label": "Coverafbeelding"
@@ -2527,8 +2453,7 @@
           "name": "Tekst",
           "settings": {
             "text": {
-              "label": "Tekst",
-              "default": "Tekstblok"
+              "label": "Tekst"
             },
             "text_style": {
               "label": "TextStyle",
@@ -2557,25 +2482,12 @@
           "name": "Variantkiezer",
           "settings": {
             "picker_type": {
-              "label": "Stijl",
+              "label": "Type",
               "options__1": {
                 "label": "Vervolgkeuzelijst"
               },
               "options__2": {
                 "label": "Keuzeopties"
-              }
-            },
-            "swatch_shape": {
-              "label": "Staal",
-              "info": "Schakel [stalen](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-settings#options-with-swatches) in bij productopties.",
-              "options__1": {
-                "label": "Cirkel"
-              },
-              "options__2": {
-                "label": "Vierkant"
-              },
-              "options__3": {
-                "label": "Geen"
               }
             }
           }
@@ -2602,8 +2514,7 @@
               "content": "Een winkelnaam en beschrijving worden weergegeven in de voorbeeldafbeelding. [Meer informatie](https://help.shopify.com/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)"
             },
             "text": {
-              "label": "Tekstkleur",
-              "default": "Delen"
+              "label": "Tekstkleur"
             }
           }
         },
@@ -2769,8 +2680,7 @@
           "name": "Opschrift",
           "settings": {
             "heading": {
-              "label": "Opschrift",
-              "default": "Opent binnenkort"
+              "label": "Opschrift"
             }
           }
         },
@@ -2778,8 +2688,7 @@
           "name": "Paragraaf",
           "settings": {
             "paragraph": {
-              "label": "Beschrijving",
-              "default": "<p>Kom als eerste te weten wanneer we van start gaan.</p>"
+              "label": "Beschrijving"
             },
             "text_style": {
               "options__1": {
@@ -2854,8 +2763,7 @@
         "accessibility": {
           "content": "Toegankelijkheid",
           "label": "Beschrijving van diavoorstelling",
-          "info": "Geef een beschrijving van de diavoorstelling voor klanten die schermlezers gebruiken.",
-          "default": "Diavoorstelling over ons merk"
+          "info": "Geef een beschrijving van de diavoorstelling voor klanten die schermlezers gebruiken."
         }
       },
       "blocks": {
@@ -2866,17 +2774,14 @@
               "label": "Afbeelding"
             },
             "heading": {
-              "label": "Kop",
-              "default": "Afbeelding dia"
+              "label": "Kop"
             },
             "subheading": {
-              "label": "Subkop",
-              "default": "Vertel met afbeeldingen het verhaal van je merk"
+              "label": "Subkop"
             },
             "button_label": {
               "label": "Knoplabel",
-              "info": "Laat het label leeg om de knop te verbergen.",
-              "default": "Knoplabel"
+              "info": "Laat het label leeg om de knop te verbergen."
             },
             "link": {
               "label": "Knoplink"
@@ -2959,8 +2864,7 @@
           "label": "Bijschrift"
         },
         "heading": {
-          "label": "Kop",
-          "default": "Inklapbare content"
+          "label": "Kop"
         },
         "heading_alignment": {
           "label": "Uitlijning kop",
@@ -3028,8 +2932,7 @@
           "settings": {
             "heading": {
               "info": "Gebruik een kop die de content verklaart.",
-              "label": "Kop",
-              "default": "Inklapbare rij"
+              "label": "Kop"
             },
             "row_content": {
               "label": "Content rij"
@@ -3189,10 +3092,7 @@
       "name": "Adressen"
     },
     "main-login": {
-      "name": "Inloggen",
-      "shop_login_button": {
-        "enable": "Inloggen met Shop inschakelen"
-      }
+      "name": "Inloggen"
     },
     "main-order": {
       "name": "Bestelling"
@@ -3216,8 +3116,7 @@
           "label": "Aantal kolommen op desktopcomputers"
         },
         "paragraph__1": {
-          "content": "In de loop van de tijd worden veranderingen en verbeteringen doorgevoerd dankzij dynamische aanbevelingen, waarbij gebruik wordt gemaakt van informatie over bestellingen en producten. [Meer informatie](https://help.shopify.com/themes/development/recommended-products)",
-          "default": "Wellicht vind je dit ook leuk"
+          "content": "In de loop van de tijd worden veranderingen en verbeteringen doorgevoerd dankzij dynamische aanbevelingen, waarbij gebruik wordt gemaakt van informatie over bestellingen en producten. [Meer informatie](https://help.shopify.com/themes/development/recommended-products)"
         },
         "header__2": {
           "content": "Productkaart"
@@ -3291,6 +3190,18 @@
           },
           "label": "Breedte van bureaubladafbeelding",
           "info": "De afbeelding wordt automatisch geoptimaliseerd voor mobiel."
+        },
+        "heading_size": {
+          "options__1": {
+            "label": "Klein"
+          },
+          "options__2": {
+            "label": "Gemiddeld"
+          },
+          "options__3": {
+            "label": "Groot"
+          },
+          "label": "Grootte koptekst"
         },
         "text_style": {
           "options__1": {
@@ -3378,20 +3289,16 @@
               "label": "Afbeelding"
             },
             "caption": {
-              "label": "Bijschrift",
-              "default": "Bijschrift"
+              "label": "Bijschrift"
             },
             "heading": {
-              "label": "Koptekst",
-              "default": "Rij"
+              "label": "Koptekst"
             },
             "text": {
-              "label": "Tekst",
-              "default": "<p>Plaats een afbeelding bij stukken tekst om de aandacht op je gekozen product, collectie of blogpost te richten. Voeg details over beschikbaarheid en stijl toe of plaats een productrecensie.</p>"
+              "label": "Tekst"
             },
             "button_label": {
-              "label": "Knoplabel",
-              "default": "Knoplabel"
+              "label": "Knoplabel"
             },
             "button_link": {
               "label": "Knoplink"

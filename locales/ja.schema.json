@@ -56,8 +56,8 @@
       "name": "SNS",
       "settings": {
         "social_twitter_link": {
-          "label": "X / Twitter",
-          "info": "https://x.com/shopify"
+          "label": "Twitter",
+          "info": "https://twitter.com/shopify"
         },
         "social_facebook_link": {
           "label": "Facebook",
@@ -395,9 +395,6 @@
         },
         "options__4": {
           "label": "特大"
-        },
-        "options__5": {
-          "label": "4L"
         }
       },
       "image_shape": {
@@ -453,8 +450,7 @@
         "announcement": {
           "settings": {
             "text": {
-              "label": "テキスト",
-              "default": "ストアへようこそ"
+              "label": "テキスト"
             },
             "text_alignment": {
               "label": "テキストアラインメント",
@@ -515,8 +511,7 @@
       "name": "コラージュ",
       "settings": {
         "heading": {
-          "label": "見出し",
-          "default": "マルチメディアコラージュ"
+          "label": "見出し"
         },
         "desktop_layout": {
           "label": "デスクトップのレイアウト",
@@ -590,8 +585,7 @@
             },
             "description": {
               "label": "動画の代替テキスト",
-              "info": "スクリーンリーダーを使用しているお客様向けにビデオの説明を記入してください。[詳しくはこちら](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
-              "default": "動画の説明をする"
+              "info": "スクリーンリーダーを使用しているお客様向けにビデオの説明を記入してください。[詳しくはこちら](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)"
             }
           },
           "name": "ビデオ"
@@ -605,8 +599,7 @@
       "name": "コレクションリスト",
       "settings": {
         "title": {
-          "label": "見出し",
-          "default": "コレクション"
+          "label": "見出し"
         },
         "image_ratio": {
           "label": "画像比",
@@ -661,12 +654,6 @@
       "name": "お問い合わせフォーム",
       "presets": {
         "name": "お問い合わせフォーム"
-      },
-      "settings": {
-        "title": {
-          "default": "お問い合わせフォーム",
-          "label": "見出し"
-        }
       }
     },
     "custom-liquid": {
@@ -685,8 +672,7 @@
       "name": "ブログ記事",
       "settings": {
         "heading": {
-          "label": "見出し",
-          "default": "ブログ記事"
+          "label": "見出し"
         },
         "blog": {
           "label": "ブログ"
@@ -719,8 +705,7 @@
       "name": "特集コレクション",
       "settings": {
         "title": {
-          "label": "見出し",
-          "default": "特集コレクション"
+          "label": "見出し"
         },
         "collection": {
           "label": "コレクション"
@@ -825,8 +810,7 @@
         "link_list": {
           "settings": {
             "heading": {
-              "label": "見出し",
-              "default": "クイックリンク"
+              "label": "見出し"
             },
             "menu": {
               "label": "メニュー",
@@ -838,12 +822,10 @@
         "text": {
           "settings": {
             "heading": {
-              "label": "見出し",
-              "default": "見出し"
+              "label": "見出し"
             },
             "subtext": {
-              "label": "サブテキスト",
-              "default": "<p>連絡先情報、ストア詳細、ブランドのコンテンツをお客様と共有します。</p>"
+              "label": "サブテキスト"
             }
           },
           "name": "テキスト"
@@ -869,8 +851,7 @@
           "label": "メール登録を表示する"
         },
         "newsletter_heading": {
-          "label": "見出し",
-          "default": "ストアからのメールを受け取る"
+          "label": "見出し"
         },
         "header__1": {
           "info": "「マーケティングを受け入れる」のお客様リストに自動的に追加された購読者。[詳しくはこちら](https://help.shopify.com/manual/customers/manage-customers)",
@@ -1019,14 +1000,6 @@
         },
         "menu_color_scheme": {
           "label": "メニューの配色"
-        },
-        "header__7": {
-          "content": "お客様アカウントのログイン",
-          "info": "お客様アカウントを管理するには、[お客様アカウント設定](/admin/settings/customer_accounts) に移動します。"
-        },
-        "enable_customer_avatar": {
-          "label": "アバターを表示",
-          "info": "お客様はShopにログインしているときのみアバターを見ることができます"
         }
       }
     },
@@ -1129,8 +1102,7 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "見出し",
-              "default": "画像バナー"
+              "label": "見出し"
             }
           },
           "name": "見出し"
@@ -1138,8 +1110,7 @@
         "text": {
           "settings": {
             "text": {
-              "label": "説明",
-              "default": "テンプレートのバナー画像またはコンテンツに関する詳細をお客様に提供します。"
+              "label": "説明"
             },
             "text_style": {
               "options__1": {
@@ -1160,8 +1131,7 @@
           "settings": {
             "button_label_1": {
               "label": "最初のボタンのラベル",
-              "info": "ボタンを非表示にするには、ラベルを空白にします。",
-              "default": "ボタンのラベル"
+              "info": "ボタンを非表示にするには、ラベルを空白にします。"
             },
             "button_link_1": {
               "label": "最初のボタンのリンク"
@@ -1171,8 +1141,7 @@
             },
             "button_label_2": {
               "label": "2番目のボタンのラベル",
-              "info": "ボタンを非表示にするには、ラベルを空白にします。",
-              "default": "ボタンのラベル"
+              "info": "ボタンを非表示にするには、ラベルを空白にします。"
             },
             "button_link_2": {
               "label": "2番目のボタンのリンク"
@@ -1282,8 +1251,7 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "見出し",
-              "default": "テキスト付き画像"
+              "label": "見出し"
             }
           },
           "name": "見出し"
@@ -1291,8 +1259,7 @@
         "text": {
           "settings": {
             "text": {
-              "label": "コンテンツ",
-              "default": "<p>選択した商品、コレクション、ブログ記事に注目を集めるため、テキストと画像を組み合わせます。可用性、スタイル、またはレビュー提供についての詳細を追加します。</p>"
+              "label": "コンテンツ"
             },
             "text_style": {
               "label": "テキストスタイル",
@@ -1310,8 +1277,7 @@
           "settings": {
             "button_label": {
               "label": "ボタンのラベル",
-              "info": "ボタンを非表示にするには、ラベルを空白にします。",
-              "default": "ボタンのラベル"
+              "info": "ボタンを非表示にするには、ラベルを空白にします。"
             },
             "button_link": {
               "label": "ボタンのリンク"
@@ -1326,8 +1292,7 @@
           "name": "キャプション",
           "settings": {
             "text": {
-              "label": "テキスト",
-              "default": "タグラインを追加"
+              "label": "テキスト"
             },
             "text_style": {
               "label": "テキストスタイル",
@@ -1405,8 +1370,7 @@
               "content": "プレビュー画像には、ストアタイトルと説明文が表示されます。[詳しくはこちら](https://help.shopify.com/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)。"
             },
             "text": {
-              "label": "テキスト",
-              "default": "共有"
+              "label": "テキスト"
             }
           }
         }
@@ -1532,6 +1496,10 @@
           "label": "商品の評価を表示",
           "info": "評価を表示するには、商品評価アプリを追加します。[詳しくはこちら](https://help.shopify.com/manual/online-store/themes/theme-structure/page-types#product-grid-section-settings)"
         },
+        "enable_quick_buy": {
+          "label": "「クイック追加」ボタンを有効にする",
+          "info": "ポップアップやドロワーカートのタイプに最適です。"
+        },
         "columns_desktop": {
           "label": "デスクトップの列数"
         },
@@ -1559,15 +1527,6 @@
             "label": "ドロワー"
           },
           "info": "ドロワーはデフォルトのモバイルレイアウトです。"
-        },
-        "quick_add": {
-          "label": "クイック追加",
-          "info": "一括操作は大量に購入するアイテム向けに最適化されています。",
-          "options": {
-            "option_1": "なし",
-            "option_2": "スタンダード",
-            "option_3": "一括"
-          }
         }
       }
     },
@@ -1575,8 +1534,7 @@
       "name": "コレクションリストのページ",
       "settings": {
         "title": {
-          "label": "見出し",
-          "default": "コレクション"
+          "label": "見出し"
         },
         "sort": {
           "label": "コレクションの並べ替え方法:",
@@ -1652,8 +1610,7 @@
         "text": {
           "settings": {
             "text": {
-              "label": "テキスト",
-              "default": "テキストブロック"
+              "label": "テキスト"
             },
             "text_style": {
               "label": "テキストスタイル",
@@ -1671,31 +1628,18 @@
           "name": "テキスト"
         },
         "variant_picker": {
-          "name": "バリエーションピッカー",
           "settings": {
             "picker_type": {
-              "label": "スタイル",
+              "label": "タイプ",
               "options__1": {
                 "label": "ドロップダウン"
               },
               "options__2": {
                 "label": "ピル型ボタン"
               }
-            },
-            "swatch_shape": {
-              "label": "見本",
-              "info": "商品オプションの[見本](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-settings#options-with-swatches)を有効にする。",
-              "options__1": {
-                "label": "円形"
-              },
-              "options__2": {
-                "label": "正方形"
-              },
-              "options__3": {
-                "label": "なし"
-              }
             }
-          }
+          },
+          "name": "バリエーションピッカー"
         },
         "buy_buttons": {
           "settings": {
@@ -1719,8 +1663,7 @@
               "content": "プレビュー画像には、ストアタイトルと説明文が表示されます。[詳しくはこちら](https://help.shopify.com/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)。"
             },
             "text": {
-              "label": "テキスト",
-              "default": "共有"
+              "label": "テキスト"
             }
           },
           "name": "共有"
@@ -1729,8 +1672,7 @@
           "settings": {
             "heading": {
               "info": "コンテンツを説明する見出しを含めます。",
-              "label": "見出し",
-              "default": "折りたたみ可能な行"
+              "label": "見出し"
             },
             "content": {
               "label": "行のコンテンツ"
@@ -1879,8 +1821,7 @@
         "popup": {
           "settings": {
             "link_label": {
-              "label": "リンクラベル",
-              "default": "ポップアップリンクのテキスト"
+              "label": "リンクラベル"
             },
             "page": {
               "label": "ページ"
@@ -1918,8 +1859,7 @@
               "content": "補完する商品を選択するには、Search & Discoveryアプリを追加してください。[詳しくはこちら](https://help.shopify.com/manual/online-store/search-and-discovery/product-recommendations)"
             },
             "heading": {
-              "label": "見出し",
-              "default": "相性が良い"
+              "label": "見出し"
             },
             "make_collapsible_row": {
               "label": "折りたたみ可能な行として表示する"
@@ -1982,8 +1922,7 @@
               "label": "最初の画像"
             },
             "heading_1": {
-              "label": "最初の見出し",
-              "default": "見出し"
+              "label": "最初の見出し"
             },
             "icon_2": {
               "label": "2番目のアイコン"
@@ -1992,8 +1931,7 @@
               "label": "2番目の画像"
             },
             "heading_2": {
-              "label": "2番目の見出し",
-              "default": "見出し"
+              "label": "2番目の見出し"
             },
             "icon_3": {
               "label": "3番目のアイコン"
@@ -2002,8 +1940,7 @@
               "label": "3番目の画像"
             },
             "heading_3": {
-              "label": "3番目の見出し",
-              "default": "見出し"
+              "label": "3番目の見出し"
             }
           }
         },
@@ -2199,8 +2136,7 @@
       "name": "マルチカラム",
       "settings": {
         "title": {
-          "label": "見出し",
-          "default": "マルチカラム"
+          "label": "見出し"
         },
         "image_width": {
           "label": "画像の幅",
@@ -2248,8 +2184,7 @@
           }
         },
         "button_label": {
-          "label": "ボタンのラベル",
-          "default": "ボタンのラベル"
+          "label": "ボタンのラベル"
         },
         "button_link": {
           "label": "ボタンのリンク"
@@ -2280,12 +2215,10 @@
               "label": "画像"
             },
             "title": {
-              "label": "見出し",
-              "default": "列"
+              "label": "見出し"
             },
             "text": {
-              "label": "説明",
-              "default": "<p>選択した商品、コレクション、ブログ記事に注目を集めるため、テキストと画像を組み合わせます。可用性、スタイル、またはレビュー提供についての詳細を追加します。</p>"
+              "label": "説明"
             },
             "link_label": {
               "label": "リンクラベル"
@@ -2315,8 +2248,7 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "見出し",
-              "default": "ストアからのメールを受け取る"
+              "label": "見出し"
             }
           },
           "name": "見出し"
@@ -2324,8 +2256,7 @@
         "paragraph": {
           "settings": {
             "paragraph": {
-              "label": "説明",
-              "default": "<p>新しいコレクションや限定オファーに関する最新情報をお知らせします。</p>"
+              "label": "説明"
             }
           },
           "name": "小見出し"
@@ -2385,8 +2316,7 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "見出し",
-              "default": "ブランドについて説明する"
+              "label": "見出し"
             }
           },
           "name": "見出し"
@@ -2394,8 +2324,7 @@
         "text": {
           "settings": {
             "text": {
-              "label": "説明",
-              "default": "<p>ブランドに関する情報をお客様と共有します。商品を説明したり、告知をしたり、ストアへのお客様を歓迎したりします。</p>"
+              "label": "説明"
             }
           },
           "name": "テキスト"
@@ -2404,8 +2333,7 @@
           "settings": {
             "button_label_1": {
               "label": "最初のボタンのラベル",
-              "info": "ボタンを非表示にするには、ラベルを空白にします。",
-              "default": "ボタンのラベル"
+              "info": "ボタンを非表示にするには、ラベルを空白にします。"
             },
             "button_link_1": {
               "label": "最初のボタンのリンク"
@@ -2430,8 +2358,7 @@
           "name": "キャプション",
           "settings": {
             "text": {
-              "label": "テキスト",
-              "default": "タグラインを追加"
+              "label": "テキスト"
             },
             "text_style": {
               "label": "テキストスタイル",
@@ -2476,8 +2403,7 @@
       "name": "動画",
       "settings": {
         "heading": {
-          "label": "見出し",
-          "default": "動画"
+          "label": "見出し"
         },
         "cover_image": {
           "label": "カバー画像"
@@ -2527,8 +2453,7 @@
           "name": "テキスト",
           "settings": {
             "text": {
-              "label": "テキスト",
-              "default": "テキストブロック"
+              "label": "テキスト"
             },
             "text_style": {
               "label": "テキストスタイル",
@@ -2557,25 +2482,12 @@
           "name": "バリエーションピッカー",
           "settings": {
             "picker_type": {
-              "label": "スタイル",
+              "label": "タイプ",
               "options__1": {
                 "label": "ドロップダウン"
               },
               "options__2": {
                 "label": "ピル型ボタン"
-              }
-            },
-            "swatch_shape": {
-              "label": "見本",
-              "info": "商品オプションの[見本](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-settings#options-with-swatches)を有効にする。",
-              "options__1": {
-                "label": "円形"
-              },
-              "options__2": {
-                "label": "正方形"
-              },
-              "options__3": {
-                "label": "なし"
               }
             }
           }
@@ -2602,8 +2514,7 @@
               "content": "プレビュー画像には、ストアタイトルと説明文が表示されます。[詳しくはこちら](https://help.shopify.com/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)"
             },
             "text": {
-              "label": "テキスト",
-              "default": "共有"
+              "label": "テキスト"
             }
           }
         },
@@ -2769,8 +2680,7 @@
           "name": "見出し",
           "settings": {
             "heading": {
-              "label": "見出し",
-              "default": "まもなく公開"
+              "label": "見出し"
             }
           }
         },
@@ -2778,8 +2688,7 @@
           "name": "段落",
           "settings": {
             "paragraph": {
-              "label": "説明",
-              "default": "<p>ストアに関する最新情報をお知らせします。</p>"
+              "label": "説明"
             },
             "text_style": {
               "options__1": {
@@ -2854,8 +2763,7 @@
         "accessibility": {
           "content": "アクセシビリティ",
           "label": "スライドショーの説明",
-          "info": "スクリーンリーダーを使用しているお客様向けにスライドショーの説明を記入してください。",
-          "default": "ブランドについてのスライドショー"
+          "info": "スクリーンリーダーを使用しているお客様向けにスライドショーの説明を記入してください。"
         }
       },
       "blocks": {
@@ -2866,17 +2774,14 @@
               "label": "画像"
             },
             "heading": {
-              "label": "見出し",
-              "default": "画像スライド"
+              "label": "見出し"
             },
             "subheading": {
-              "label": "小見出し",
-              "default": "ブランドのストーリーを画像で伝える"
+              "label": "小見出し"
             },
             "button_label": {
               "label": "ボタンのラベル",
-              "info": "ボタンを非表示にするには、ラベルを空白にします。",
-              "default": "ボタンのラベル"
+              "info": "ボタンを非表示にするには、ラベルを空白にします。"
             },
             "link": {
               "label": "ボタンのリンク"
@@ -2959,8 +2864,7 @@
           "label": "キャプション"
         },
         "heading": {
-          "label": "見出し",
-          "default": "折りたたみ可能なコンテンツ"
+          "label": "見出し"
         },
         "heading_alignment": {
           "label": "見出しの配置",
@@ -3028,8 +2932,7 @@
           "settings": {
             "heading": {
               "info": "コンテンツを説明する見出しを含めます。",
-              "label": "見出し",
-              "default": "折りたたみ可能な行"
+              "label": "見出し"
             },
             "row_content": {
               "label": "行のコンテンツ"
@@ -3189,10 +3092,7 @@
       "name": "アドレス"
     },
     "main-login": {
-      "name": "ログイン",
-      "shop_login_button": {
-        "enable": "[Shopにログインする] を有効にする"
-      }
+      "name": "ログイン"
     },
     "main-order": {
       "name": "注文"
@@ -3216,8 +3116,7 @@
           "label": "デスクトップでの列数"
         },
         "paragraph__1": {
-          "content": "動的レコメンデーションでは、注文や商品の情報を利用して、時間の経過とともに変化し改善していきます。[詳しくはこちら](https://help.shopify.com/themes/development/recommended-products)",
-          "default": "おすすめ"
+          "content": "動的レコメンデーションでは、注文や商品の情報を利用して、時間の経過とともに変化し改善していきます。[詳しくはこちら](https://help.shopify.com/themes/development/recommended-products)"
         },
         "header__2": {
           "content": "商品カード"
@@ -3291,6 +3190,18 @@
           },
           "label": "デスクトップ画像の幅",
           "info": "画像はモバイル用に自動で最適化されます。"
+        },
+        "heading_size": {
+          "options__1": {
+            "label": "小"
+          },
+          "options__2": {
+            "label": "中"
+          },
+          "options__3": {
+            "label": "大"
+          },
+          "label": "見出しのサイズ"
         },
         "text_style": {
           "options__1": {
@@ -3378,20 +3289,16 @@
               "label": "画像"
             },
             "caption": {
-              "label": "キャプション",
-              "default": "キャプション"
+              "label": "キャプション"
             },
             "heading": {
-              "label": "見出し",
-              "default": "行"
+              "label": "見出し"
             },
             "text": {
-              "label": "テキスト",
-              "default": "<p>選択した商品、コレクション、ブログ記事に注目を集めるため、テキストと画像を組み合わせます。可用性、スタイル、またはレビュー提供についての詳細を追加します。</p>"
+              "label": "テキスト"
             },
             "button_label": {
-              "label": "ボタンのラベル",
-              "default": "ボタンのラベル"
+              "label": "ボタンのラベル"
             },
             "button_link": {
               "label": "ボタンのリンク"
