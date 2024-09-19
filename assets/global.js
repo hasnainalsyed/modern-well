@@ -1071,6 +1071,8 @@ class VariantSelects extends HTMLElement {
   }
 
   renderProductInfo() {
+    // console.log(this);
+    
     const requestedVariantId = this.currentVariant.id;
     const sectionId = this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section;
 
