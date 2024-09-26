@@ -1,0 +1,40 @@
+{% liquid
+  assign loading = 'eager'
+  assign fetchpriority = 'auto'
+
+  if section.index == 1
+    assign fetchpriority = 'high'
+  elsif section.index > 2
+    assign loading = 'lazy'
+  endif
+%}
+
+<div id="product-images-{{ section.id }}-container" class="product-image" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    {% assign image = product.selected_or_first_available_variant.metafields.custom.image %}
+
+    {{
+      image
+      | image_url: width: image.with
+      | image_tag: loading: loading, fetchpriority: fetchpriority, class: 'product-image__img'
+    }}
+  </div>
+</div>
+
+<style>
+  .product-image__img {
+    width: 400px;
+    height: auto;
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product Images",
+  "settings": []
+}
+{% endschema %}
