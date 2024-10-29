@@ -517,12 +517,5 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
-  },
-  "shopify": {
-    "checkout": {
-      "general": {
-        "submit_for_review_notice_label": "By completing your order, you agree to our {{ terms_of_service }}, {{ refund_policy }}, and {{ shipping_policy }}."
-      }
-    }
   }
 }
