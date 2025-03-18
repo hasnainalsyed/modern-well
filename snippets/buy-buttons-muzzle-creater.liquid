@@ -25,6 +25,11 @@
     grid-row-gap: 10px;
   }
 
+  [data-muzzle-start-btn][hidden],
+  .muzzle-creater__templates[hidden] {
+    display: none;
+  }
+
   .muzzle-creater__template,
   .muzzle-creater__category {
     background-color: #fff;
@@ -76,14 +81,14 @@
 
       <div class="muzzle-creater__categories">
         {% for muzzle in muzzles %}
-          <div class="muzzle-creater__category" data-muzzle-category="{{ muzzle.heading | handleize }}">
+          <div class="muzzle-creater__category" hidden data-muzzle-category="{{ muzzle.heading | handleize }}">
             {%- assign category_image = muzzle.image -%}
             {{
               category_image
               | image_url: width: category_image.width
               | image_tag: class: 'muzzle-creater__category-image', loading: 'lazy'
             }}
-            <h3 class="muzzle-creater__category-heading">
+            <h3 class="muzzle-creater__category-heading" data-muzzle-category-name="{{ muzzle.heading }}">
               {{ muzzle.heading }}
             </h3>
             <button
@@ -95,22 +100,21 @@
           </div>
 
           {% assign muzzle_templates = muzzle.muzzle_templates.value %}
-          <div class="muzzle-creater__templates" data-muzzle-templates="{{ muzzle.heading | handleize }}">
+          <div class="muzzle-creater__templates" hidden data-muzzle-templates="{{ muzzle.heading | handleize }}">
             {% for muzzle_template in muzzle_templates %}
-              <div
-                class="muzzle-creater__template"
-                data-muzzle-template-item="{{ muzzle_template.heading | handleize }}"
-              >
+              <div class="muzzle-creater__template">
                 {%- assign template_image = muzzle_template.image -%}
                 {{
                   template_image
                   | image_url: width: template_image.width
                   | image_tag: class: 'muzzle-creater__template-image', loading: 'lazy'
                 }}
-                <h4 class="muzzle-creater__template-heading">{{ muzzle_template.heading }}</h4>
+                <h4 class="muzzle-creater__template-heading" data-muzzle-template-name="{{ muzzle_template.heading }}">
+                  {{ muzzle_template.heading }}
+                </h4>
                 <button
                   class="button button--full-width button--primary"
-                  data-muzzle-template-selector="{{ muzzle_template.heading | handleize }}"
+                  data-muzzle-template-selector="{{ muzzle_template.heading }}"
                 >
                   Chose
                 </button>
@@ -120,7 +124,7 @@
         {% endfor %}
       </div>
 
-      <div class="muzzle-form">
+      <div class="muzzle-form" data-info-form hidden>
         <div class="images-selector">
           <label for="image">Select Images:</label>
           <input type="file" id="image" name="image" accept="image/*" multiple>
@@ -180,6 +184,7 @@
             <label class="field__label" for="ContactForm-name">Last name</label>
           </div>
         </div>
+        <button class="button button--full-width button--primary" data-submit-form>Submit</button>
       </div>
     </div>
 
@@ -211,6 +216,7 @@
         novalidate: 'novalidate',
         data-type: 'add-to-cart-form'
       -%}
+      <div data-type="add-to-cart-form-inputs"></div>
         <input
           type="hidden"
           name="id"

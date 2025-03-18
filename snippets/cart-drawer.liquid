@@ -114,7 +114,13 @@
 
                   <tbody role="rowgroup">
                     {%- for item in cart.items -%}
-                      <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
+                      <tr
+                        role="row"
+                        class="cart-item"
+                        id="CartDrawer-Item-{{ item.index | plus: 1 }}"
+                        data-muzzle-category="{{ item.properties['muzzle-category'] }}"
+                        data-muzzle-template="{{ item.properties['muzzle-template'] }}"
+                      >
                         <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
                           {% if item.image %}
                             {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}

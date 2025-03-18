@@ -1,6 +1,11 @@
 {%- if cart != empty -%}
   {%- for item in cart.items -%}
-    <div id="cart-notification-product-{{ item.key }}" class="cart-item">
+    <div
+      class="cart-item"
+      id="cart-notification-product-{{ item.key }}"
+      data-muzzle-category="{{ item.properties['muzzle-category'] }}"
+      data-muzzle-template="{{ item.properties['muzzle-template'] }}"
+    >
       {%- if item.image -%}
         <div class="cart-notification-product__image global-media-settings">
           <img

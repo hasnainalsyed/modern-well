@@ -79,7 +79,16 @@
 
               <tbody>
                 {%- for item in cart.items -%}
-                  <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+                  <tr
+                    class="cart-item"
+                    id="CartItem-{{ item.index | plus: 1 }}"
+                    data-muzzle-category="{{ item.properties['muzzle-category'] }}"
+                    data-muzzle-template="{{ item.properties['muzzle-template'] }}"
+                    data-first-name="{{ item.properties['first-name'] }}"
+                    data-last-name="{{ item.properties['last-name'] }}"
+                    data-recipient-first-name="{{ item.properties['recipient-first-name'] }}"
+                    data-recipient-last-name="{{ item.properties['recipient-last-name'] }}"
+                  >
                     <td class="cart-item__media">
                       {% if item.image %}
                         {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
